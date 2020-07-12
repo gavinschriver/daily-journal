@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gavin's Daily Journal</title>
+  </head>
+
+  <body>
+    <header class="siteHeader">
+      <img class="siteHeader__logo" src="" />
+      <h1 class="siteHeader__name">Gavin's Daily Journal</h1>
+    </header>
+
+    <main class="container">
+      <form class="entryForm">
+        <input type="date" class="entryForm__dateInput" />
+        <input type="text" class="entryForm__textInput" />
+        <textarea class="entryForm__textArea"></textarea>
+        <select name="mood" class="entryForm__moodDropdown">
+          <option value="Mood 1" class="moodDropdown__option"> </option
+          ><option value="Mood 2" class="moodDropdown__option"> </option
+          ><option value="Mood 3" class="moodDropdown__option"> </option
+        ></select>
+
+        <button class="entryForm">Publish</button>
+      </form>
+      <ul class="entryList">
+        <li class="entryList__item">Entry 1 Preview</li>
+        <li class="entryList__item">Entry 2 Preview</li>
+        <li class="entryList__item">Entry 3 Preview</li>
+      </ul>
+      <article class="entry">
+        <p class="entry__Text">Dear Diary...</p>
+        <button class="entry__deleteButton">Delete Entry</button>
+        <button class="entry__editButton">Edit Entry</button>
+      </article>
+    </main>
+
+    <footer>
+      <a
+        class="footer__socialLink"
+        href="https://github.com/gavinschriver"
+        target="_blank"
+        >gitHub</a
+      >
+      <p class="footer__copyright">Copyright 2020</p>
+    </footer>
+  </body>
 </html>
