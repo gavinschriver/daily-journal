@@ -1,0 +1,81 @@
+body > * {
+    padding: 3px;
+    margin: 5px;
+}
+
+.siteHeader {
+    border: 5px solid black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.siteHeader__logo {
+    border: 3px solid grey;
+    height: 15rem;
+}
+
+.siteHeader__name {
+    border: 3px solid grey;
+}
+
+.container {
+    border: 5px solid black;
+}
+
+.entryForm {
+    border: 3px solid grey;
+}
+
+.entryForm__dateInput {
+}
+
+.entryForm__textInput {
+}
+
+.entryForm__textArea {
+}
+
+.entryForm__moodDropdown {
+}
+
+.moodDropdown__option {
+}
+
+.entryForm__publishButton {
+}
+
+.entryList {
+    border: 3px solid grey;
+    margin: 0px;
+}
+
+.entryList__item {
+    border: 2px solid blue;
+    padding: 1rem;
+    margin: 1rem;
+    list-style: none;
+}
+
+.entry {
+    border: 3px solid grey;
+}
+
+.entry__text {
+    border: 2px solid blue;
+    padding: 1rem;
+    margin: 1rem;
+    list-style: none;
+}
+
+.siteFooter {
+    border: 5px solid black;
+}
+
+.siteFooter__socialLink {
+    border: 3px solid grey;
+}
+
+.siteFooter__copyright {
+    border: 3px solid grey;
+}
