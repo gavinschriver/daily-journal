@@ -3,6 +3,11 @@ body > * {
     margin: 5px;
 }
 
+.inputWrapper{
+    border: 1px solid brown;
+    padding: 2px;
+}
+
 .siteHeader {
     border: 5px solid black;
     display: flex;
