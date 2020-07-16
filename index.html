@@ -16,40 +16,39 @@
     <main class="container">
       <h2>Daily Journal</h2>
       <form action="" class="entryForm">
-        <fieldset>
+        <fieldset class="fieldset">
 
           <div class="inputWrapper">
           <label for="journalDate"
-            >Date of Entry:<input
-              type="date"
+            >Date of Entry:</label>
+            <input
+              type="date"     
               class="entryForm__dateInput"
               name="journalDate"
               id="journalDate"
             />
-          </label>
         </div>
 
         <div class="inputWrapper">
           <label for="topicsCovered"
-            >Topics Covered:<input
+            >Topics Covered:</label><input
               type="text"
               serve
               class="entryForm__textInput"
               placeholder="topics covered"
               name="topicsCovered"
               id="topicsCovered"
-          /></label>
+          />
           </div>
 
           <div class="inputWrapper">
-          <label for="entryArea"
-            >Journal Entry<textarea class="entryForm__textArea"></textarea>
-          </label>
+          <label for="entryArea">Journal Entry</label>
+          <textarea class="entryForm__textArea"></textarea>
         </div>
 
         <div class="inputWrapper">
           <label for="mood"
-            >My Mood
+            >My Mood</label>
             <select name="mood" class="entryForm__moodDropdown">
               <option value="Mood 1" class="moodDropdown__option"
                 >Mood 1</option
@@ -61,7 +60,6 @@
                 >Mood 3</option
               >
             </select>
-          </label>
           </div>
 
           <button class="entryForm__publishButton">Publish</button>
