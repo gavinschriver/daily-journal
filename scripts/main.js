@@ -1,4 +1,4 @@
-import { testLog } from "./JournalDataProvider.js";
+import { useJournalEntries } from "./JournalDataProvider.js";
 
 
-testLog()
+console.log(useJournalEntries());

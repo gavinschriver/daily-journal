@@ -27,18 +27,16 @@ const journal = [
         concept: "lab time; debugging; pro dev",
         entry: "Worked on Martin's Aquarium modules, Daily Journal layout",
         mood: "grokking"
-    },
+    }
 ]
 
-export const testLog = () =>
-{
-    console.log(journal)
-}
+
 
 export const useJournalEntries = () => { // create an exportable variable and assign it the following function:
     const sortedByDate = journal.sort( // create a variable and assign it the value of calling the sort method on the journal array defined above...
         (currentEntry, nextEntry) =>  //.. using the parameters currentEntry and nextEntry as labels for each set of sequential array values (objects) being compared
             Date.parse(currentEntry.date) - Date.parse(nextEntry.date) // and create a comparison function that subtracts the value of passing the date property of the nextEntry object as an argument for the Date.parse method (converts a string into a longass number based on time) from the value of passing the date property of the currentEntry object as an argument for the Date.parse method (will ALSO return a longass number)
-    ) // --- values in a new array will be sorted from NEWEST entry FIRST to OLDEST entry LAST checkit https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+    ) // --- values in a new array will be sorted from OLDEST entry FIRST (lowest Index) to NEWEST entry LAST (highest index) checkit https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort 
     return sortedByDate
  }
+ 
