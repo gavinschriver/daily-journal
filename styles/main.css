@@ -1,6 +1,9 @@
-body > * {
-    padding: 3px;
-    margin: 5px;
+
+.inputWrapper {
+    border: 1px solid brown;
+    padding: 2px;
+    display: flex;
+    flex-direction: column;
 }
 
 .siteHeader {
@@ -21,6 +24,11 @@ body > * {
 
 .container {
     border: 5px solid black;
+}
+
+.fieldset {
+    display: flex;
+    flex-direction: column;
 }
 
 .entryForm {
