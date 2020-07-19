@@ -39,4 +39,6 @@ export const useJournalEntries = () => { // create an exportable variable and as
     ) // --- values in a new array will be sorted from OLDEST entry FIRST (lowest Index) to NEWEST entry LAST (highest index) checkit https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort 
     return sortedByDate
  }
+
+ //value of invoking useJournalEntries() will be the sortedByDate array
  
