@@ -1,5 +1,12 @@
-import { useJournalEntries } from "./JournalDataProvider.js";
+import { getJournalEntries, useJournalEntries } from "./JournalDataProvider.js";
 import { EntryListComponent } from "./JournalEntryList.js";
 
-EntryListComponent();
-console.log(useJournalEntries());
+
+
+EntryListComponent()
+
+getJournalEntries()
+.then(() => {
+    const journalEntryArray = useJournalEntries()
+    console.log(journalEntryArray)
+}) 
