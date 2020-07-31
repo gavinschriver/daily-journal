@@ -1,8 +1,10 @@
 export const JournalEntryCompontent = (entry) => {
     return `
-        <section id="entry--${entry.id}" class="journalEntry">
+        <article id="entry--${entry.id}" class="journalEntry">
             <h2>${entry.date}</h2>
-            <article>${entry.entry}</article>
-        </section>
+            <section>Topics Covered: ${entry.topics}</section>
+            <section>${entry.entry}</section>
+            <div>Mood: ${entry.mood}</div>
+        </article>
     `
 }

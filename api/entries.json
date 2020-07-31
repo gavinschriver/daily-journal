@@ -3,21 +3,21 @@
         {
             "id": 1,
             "date": "07/13/2020",
-            "concept": "Group project",
+            "topics": "Group project",
             "entry": "Kept practicing github collaboration as we finsihed our `Hello World` Group poject",
             "mood": "excited"
         },
         {
             "id": 2,
             "date": "07/14/2020",
-            "concept": "modular js components",
+            "topics": "modular js components",
             "entry": "Hit with a ton of bricks about modular component creation",
             "mood": "overwhelmed"
         },
         {
             "id": 3,
             "date": "07/14/2020",
-            "concept": "lab time; debugging; pro dev",
+            "topics": "lab time; debugging; pro dev",
             "entry": "Worked on Martin's Aquarium modules, Daily Journal layout",
             "mood": "grokking"
         }
