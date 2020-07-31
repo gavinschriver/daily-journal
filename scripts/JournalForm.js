@@ -2,17 +2,21 @@ import { saveEntry} from "./JournalDataProvider.js"
 
 const contentTarget = document.querySelector(".journalFormContainer")
 const eventHub = document.querySelector(".mainContainer")
+const noNoBadWords = ["shit", "piss", "cunt", "fuck", "cocksucker", "motherfucker", "tits", "fuck", "turd", "twat"]
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "publishButton") {
-        const newEntry = {
-            date: document.querySelector("#journalDate").value,
-            topics: document.querySelector("#topicsCovered").value,
-            entry: document.querySelector("#entryText").value,
-            mood: document.querySelector("#moodSelect").value
-        }
-        console.log(newEntry)
-        saveEntry(newEntry)
+        
+        if (document.querySelector("#topicsCovered").value.length < 3) {
+
+            const newEntry = {
+                date: document.querySelector("#journalDate").value,
+                topics: document.querySelector("#topicsCovered").value,
+                entry: document.querySelector("#entryText").value,
+                mood: document.querySelector("#moodSelect").value
+            }
+            saveEntry(newEntry)
+        } else alert("NOPE")
     }
 })
 

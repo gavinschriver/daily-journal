@@ -8,3 +8,5 @@ export const JournalEntryCompontent = (entry) => {
         </article>
     `
 }
+
+
