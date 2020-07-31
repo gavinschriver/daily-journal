@@ -2,9 +2,11 @@ import { getJournalEntries, useJournalEntries } from "./JournalDataProvider.js"
 import { JournalEntryCompontent } from "./JournalEntry.js"
 
 const entryLog = document.querySelector(".journalEntryListContainer")
-const eventHub = document.querySelector("")
+const eventHub = document.querySelector(".mainContainer")
 
-
+eventHub.addEventListener("journalStateChanged", customEvent => {
+    EntryListComponent()
+})
 
 
 export const EntryListComponent = ( ) => {
@@ -15,7 +17,7 @@ export const EntryListComponent = ( ) => {
     entryLog.innerHTML = `${
         entries.map(entry => {
             return JournalEntryCompontent(entry)
-        }).join("")
+        }).reverse().join("")
     }`
  
     })

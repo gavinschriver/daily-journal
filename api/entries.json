@@ -27,6 +27,27 @@
       "entry": "yeaahh",
       "mood": "overwhelmed",
       "id": 4
+    },
+    {
+      "date": "2020-07-03",
+      "topics": "asdfsdf",
+      "entry": "OKAyy",
+      "mood": "overwhelmed",
+      "id": 5
+    },
+    {
+      "date": "2020-07-08",
+      "topics": "asdfsdf",
+      "entry": "asdfasdf",
+      "mood": "Mood 3",
+      "id": 6
+    },
+    {
+      "date": "2020-07-25",
+      "topics": "huh",
+      "entry": "be pretty interesting if this wored",
+      "mood": "grokking",
+      "id": 7
     }
   ]
 }
