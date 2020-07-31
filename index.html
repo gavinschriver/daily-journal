@@ -14,81 +14,11 @@
       <h1 class="siteHeader__name">Gavin's Daily Journal</h1>
     </header>
 
-    <main class="container">
-      <h2>Daily Journal</h2>
-      <form action="" class="entryForm">
-        <fieldset class="fieldset">
-
-          <div class="inputWrapper">
-          <label for="journalDate"
-            >Date of Entry:</label>
-            <input
-              type="date"     
-              class="entryForm__dateInput"
-              name="journalDate"
-              id="journalDate"
-            />
-        </div>
-
-        <div class="inputWrapper">
-          <label for="topicsCovered"
-            >Topics Covered:</label><input
-              type="text"
-              serve
-              class="entryForm__textInput"
-              placeholder="topics covered"
-              name="topicsCovered"
-              id="topicsCovered"
-          />
-          </div>
-
-          <div class="inputWrapper">
-          <label for="entryArea">Journal Entry</label>
-          <textarea class="entryForm__textArea"></textarea>
-        </div>
-
-        <div class="inputWrapper">
-          <label for="mood"
-            >My Mood</label>
-            <select name="mood" class="entryForm__moodDropdown">
-              <option value="overwhelmed" class="moodDropdown__option"
-                >overwhelmed</option
-              >
-              <option value="excited" class="moodDropdown__option"
-                >excited</option
-              >
-              <option value="Mood 3" class="moodDropdown__option"
-                >confused</option
-              >
-              <option value="grokking" class="moodDropdown__option"
-              >grokking</option
-            >
-            </select>
-          </div>
-
-          <button class="entryForm__publishButton">Publish</button>
-        </fieldset>
-
-      </form>
-
-      <!--start section where all entries will be listed-->
-      <section id="entryLog">
-
-
-      </section>
-
-
-      <ul class="entryList">
-        <li class="entryList__item">Entry 1 Preview</li>
-        <li class="entryList__item">Entry 2 Preview</li>
-        <li class="entryList__item">Entry 3 Preview</li>
-      </ul>
+    <main class="mainContainer">
       
-      <article class="entry">
-        <p class="entry__text">Dear Diary...</p>
-        <button class="entry__deleteButton">Delete Entry</button>
-        <button class="entry__editButton">Edit Entry</button>
-      </article>
+      <section class="journalFormContainer"></section>
+      <section class="journalEntryListContainer"></section>      
+      <article class="entryContainer"></article>
     </main>
 
     <footer class="siteFooter">

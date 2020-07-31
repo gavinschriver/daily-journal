@@ -1,16 +1,26 @@
-import { useJournalEntries } from "./JournalDataProvider.js"
+import { getJournalEntries, useJournalEntries } from "./JournalDataProvider.js"
 import { JournalEntryCompontent } from "./JournalEntry.js"
 
-const entryLog = document.querySelector("#entryLog")
+const entryLog = document.querySelector(".journalEntryListContainer")
+const eventHub = document.querySelector(".mainContainer")
+
+eventHub.addEventListener("journalStateChanged", customEvent => {
+    EntryListComponent()
+})
+
 
 export const EntryListComponent = ( ) => {
+    return getJournalEntries().then(() => {
+
     const entries = useJournalEntries()
 
-    entryLog.innerHTML = 
-    `<h2>List of all entries</h2>`
-
-    for (const entry of entries) {
-
-        entryLog.innerHTML += JournalEntryCompontent(entry)
-    }
+    entryLog.innerHTML = `${
+        entries.map(entry => {
+            return JournalEntryCompontent(entry)
+        }).reverse().join("")
+    }`
+ 
+    })
 }
+
+    
