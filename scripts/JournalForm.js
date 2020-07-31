@@ -1,9 +1,25 @@
+import { saveEntry} from "./JournalDataProvider.js"
+
 const contentTarget = document.querySelector(".journalFormContainer")
+const eventHub = document.querySelector(".mainContainer")
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "publishButton") {
+        const newEntry = {
+            date: document.querySelector("#journalDate").value,
+            topics: document.querySelector("#topicsCovered").value,
+            entry: document.querySelector("#entryText").value,
+            mood: document.querySelector("#moodSelect").value
+        }
+        console.log(newEntry)
+        saveEntry(newEntry)
+    }
+})
 
 const render = () => {
     contentTarget.innerHTML =
     `
-    <form action="" class="entryForm">
+    <article action="" class="journalForm">
 <fieldset class="fieldset">
 
   <div class="inputWrapper">
@@ -31,13 +47,13 @@ const render = () => {
 
   <div class="inputWrapper">
   <label for="entryArea">Journal Entry</label>
-  <textarea class="entryForm__textArea"></textarea>
+  <textarea class="entryForm__textArea" id="entryText"></textarea>
 </div>
 
 <div class="inputWrapper">
   <label for="mood"
     >My Mood</label>
-    <select name="mood" class="entryForm__moodDropdown">
+    <select name="mood" class="entryForm__moodDropdown" id="moodSelect">
       <option value="overwhelmed" class="moodDropdown__option"
         >overwhelmed</option
       >
@@ -52,15 +68,14 @@ const render = () => {
     >
     </select>
   </div>
-
-  <button class="entryForm__publishButton">Publish</button>
+  <button class="entryForm__publishButton" id="publishButton">Publish</button>
 </fieldset>
 
-</form>
+</article>
     `
 }
 
 export const JournalForm = () => {
-    return render()
+    render()
 }
 
