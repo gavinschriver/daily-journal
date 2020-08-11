@@ -20,6 +20,59 @@ eventHub.addEventListener("click", clickEvent => {
     }
 })
 
+eventHub.addEventListener("editButtonClicked", editButtonEvent => {
+        const [prefix, matchingID] = editButtonEvent.detail.editSelectedEntryId.split("--")
+
+        contentTarget.innerHTML += `
+        <fieldset name="${matchingID}" id="editEntryForm">
+          <textarea id="editEntryText"></textarea>
+          <select id="editEntryMood">
+            <option value="verycoolman">COOL</option>
+          </select>
+          <input type="date" id="editEntryDate">
+          <input type="text" id="editEntryTopics"> 
+          <button id="editEntrySubmitButton">Submit Update</button>
+        </fieldset>
+        `
+})
+
+
+eventHub.addEventListener("click", clickEvent => {
+  if (clickEvent.target.id === "editEntrySubmitButton") {
+    const updatedEntryObj = {
+      id: document.querySelector("#editEntryForm").name,
+      topic: document.querySelector("#editEntryTopics").value,
+      mood: document.querySelector("#editEntryMood").value,
+      entry: document.querySelector("#editEntryText").value,
+      date: document.querySelector("#editEntryDate").value
+    }
+
+    saveUpdatedEntry(updatedEntryObj)
+    console.log(updatedEntryObj)
+  }
+})
+
+// // add EL to lsiten HERE for (submit editbutton from form rendered above, which will create new OB
+// populated by field values (including detail passed from edit entry button event )
+// )
+/*
+if (click was heard on submitedit entry -)
+            updatedEntryObj = {
+              id: document.querySelector.id(#editEntryForm).name
+              topic:  (editEntryTopics) .value
+              mood:    (#editEntryMood).value - from dropdown
+              entry:    .value
+              date: DQS(#editEntryDate)
+              (if we had somehting that didnt have a val prop, we could get its innerHTML)
+            }
+
+            updateEntry(updatedEntryObj)
+
+
+
+*/
+
+
 const render = () => {
     contentTarget.innerHTML =
     `

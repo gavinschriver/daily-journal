@@ -8,16 +8,55 @@ eventHub.addEventListener("journalStateChanged", () => {
     EntryListComponent()
 })
 
-export const EntryListComponent = ( ) => {
-    return getJournalEntries().then(() => {
-        
-    const entries = useJournalEntries()
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("edit--")) {
+        const editEntryButtonEvent = new CustomEvent ("editButtonClicked",{
+            detail: {
+                editSelectedEntryId: clickEvent.target.id
+            }
+        })
+        eventHub.dispatchEvent(editEntryButtonEvent)
+    } 
+})
 
-    entryLog.innerHTML = 
-        entries.map(entry => {
-            return JournalEntryCompontent(entry)
+
+const render = entries => {
+
+    const entryListHTML =
+        entries.map(entryObj => {
+            return JournalEntryCompontent(entryObj)
         }).reverse().join("")
-    })
+    
+    entryLog.innerHTML = entryListHTML
+
 }
 
+export const EntryListComponent = () => {
+    getJournalEntries()
+        .then( (testing) => {
+            const entryArray = useJournalEntries()
+            render(entryArray)
+        })
+}
+
+
+
+
+// export const EntryListComponent = ( ) => {
+
+//     return getJournalEntries().then( () => {
+        
+//     const entries = useJournalEntries()
+
+//     entryLog.innerHTML = 
+//         entries.map(entry => {
+//             return JournalEntryCompontent(entry)
+//         }).reverse().join("")
+
+//     }) //end .then
+
+// }
+
     
+//EntryListComponent() HAS a return value 
+//() means INVOKE (if empty, just means no params needed)
