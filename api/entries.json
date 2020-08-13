@@ -5,189 +5,63 @@
       "date": "07/13/2020",
       "topics": "Group project",
       "entry": "Kept practicing github collaboration as we finsihed our `Hello World` Group poject",
-      "mood": "excited"
-    },
-    {
-      "id": 2,
-      "date": "07/14/2020",
-      "topics": "modular js components",
-      "entry": "Hit with a ton of bricks about modular component creation",
-      "mood": "overwhelmed"
+      "moodId": 4
     },
     {
       "id": 3,
       "date": "07/14/2020",
       "topics": "lab time; debugging; pro dev",
       "entry": "Worked on Martin's Aquarium modules, Daily Journal layout",
-      "mood": "grokking"
-    },
-    {
-      "date": "",
-      "topics": "fffff",
-      "entry": "yeaahh",
-      "mood": "overwhelmed",
-      "id": 4
+      "moodId": 3
     },
     {
       "date": "2020-07-03",
       "topics": "asdfsdf",
       "entry": "OKAyy",
-      "mood": "overwhelmed",
+      "moodId": 2,
       "id": 5
     },
     {
       "date": "2020-07-08",
       "topics": "asdfsdf",
       "entry": "asdfasdf",
-      "mood": "Mood 3",
+      "moodId": 1,
       "id": 6
     },
     {
       "date": "2020-07-25",
       "topics": "huh",
       "entry": "be pretty interesting if this wored",
-      "mood": "grokking",
+      "moodId": 2,
       "id": 7
     },
     {
       "date": "",
       "topics": "bbuuuh",
       "entry": "test for stufff",
-      "mood": "overwhelmed",
+      "moodId": 1,
       "id": 8
+    }
+  ],
+
+  "moods": [
+    {
+      "id": 1,
+      "label": "overwhelmed"
     },
     {
-      "date": "",
-      "topics": "hmm",
-      "entry": "asdf",
-      "mood": "overwhelmed",
-      "id": 9
+      "id": 2,
+      "label": "grokking"
     },
     {
-      "date": "2020-07-05",
-      "topics": "hm",
-      "entry": "ayee",
-      "mood": "Mood 3",
-      "id": 10
+      "id": 3,
+      "label": "confused"
     },
     {
-      "date": "2020-07-15",
-      "topics": "as",
-      "entry": "asdf",
-      "mood": "overwhelmed",
-      "id": 11
-    },
-    {
-      "date": "",
-      "concept": "",
-      "entry": "asdfsadf",
-      "mood": "Great",
-      "id": 12
-    },
-    {
-      "date": "",
-      "concept": "",
-      "entry": "asdfsadf",
-      "mood": "Great",
-      "id": 13
-    },
-    {
-      "date": "",
-      "concept": "asdfsfd",
-      "entry": "asdfsadf",
-      "mood": "Great",
-      "id": 14
-    },
-    {
-      "date": "",
-      "concept": "asdfsfd",
-      "entry": "asdfsadf",
-      "mood": "Great",
-      "id": 15
-    },
-    {
-      "date": "",
-      "concept": "asdfsfd",
-      "entry": "asdfsadf",
-      "mood": "Great",
-      "id": 16
-    },
-    {
-      "date": "",
-      "concept": "asdfsfd",
-      "entry": "asdfsadf",
-      "mood": "Great",
-      "id": 17
-    },
-    {
-      "date": "",
-      "concept": "asdfsfd",
-      "entry": "asdfsadf",
-      "mood": "Great",
-      "id": 18
-    },
-    {
-      "date": "",
-      "concept": "asdfsfd",
-      "entry": "asdfsadf",
-      "mood": "Great",
-      "id": 19
-    },
-    {
-      "date": "",
-      "concept": "asdfsfd",
-      "entry": "asdfsadf",
-      "mood": "Great",
-      "id": 20
-    },
-    {
-      "date": "",
-      "concept": "asdfsfd",
-      "entry": "asdfsadf",
-      "mood": "Great",
-      "id": 21
-    },
-    {
-      "date": "2020-07-01",
-      "concept": "asdf",
-      "entry": "asdfasfdasd",
-      "mood": "Great",
-      "id": 22
-    },
-    {
-      "date": "",
-      "concept": "asdf",
-      "entry": "asdfsdf",
-      "mood": "Great",
-      "id": 23
-    },
-    {
-      "date": "",
-      "concept": "asdf",
-      "entry": "asdfsdf",
-      "mood": "Great",
-      "id": 24
-    },
-    {
-      "date": "",
-      "concept": "asdf",
-      "entry": "asdfsdf",
-      "mood": "Great",
-      "id": 25
-    },
-    {
-      "date": "",
-      "concept": "asdf",
-      "entry": "asdfsdf",
-      "mood": "Great",
-      "id": 26
-    },
-    {
-      "date": "",
-      "concept": "asdf",
-      "entry": "asdfsdf",
-      "mood": "Great",
-      "id": 27
+      "id": 4,
+      "label": "excited"
     }
   ]
+
+
 }

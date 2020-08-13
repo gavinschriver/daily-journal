@@ -11,7 +11,7 @@ export const useJournalEntries = () => {
 }
  
 export const getJournalEntries = () => {
-    return fetch("http://localhost:3001/entries")
+    return fetch("http://localhost:3001/entries?_expand=mood")
         .then(response => response.json())
         .then(parsedEntries => {
             journalEntries = parsedEntries
@@ -37,7 +37,7 @@ export const saveUpdatedEntry = updatedEntryObj => {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(entryObj)
+        body: JSON.stringify(updatedEntryObj)
     })
     .then(getJournalEntries)
     .then(dispatchStateChangeEvent)
