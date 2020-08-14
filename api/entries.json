@@ -36,14 +36,13 @@
       "id": 7
     },
     {
-      "date": "",
-      "topics": "bbuuuh",
-      "entry": "test for stufff",
+      "date": "2020-08-10",
+      "topics": "LAST TING",
+      "entry": "WHY",
       "moodId": 1,
       "id": 8
     }
   ],
-
   "moods": [
     {
       "id": 1,
@@ -62,6 +61,4 @@
       "label": "excited"
     }
   ]
-
-
 }

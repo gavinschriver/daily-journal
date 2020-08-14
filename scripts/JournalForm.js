@@ -1,5 +1,6 @@
 import { saveEntry} from "./JournalDataProvider.js"
 import { saveUpdatedEntry} from "./JournalDataProvider.js"
+import { getMoods, useMoods } from "./MoodsProvider.js"
 
 const contentTarget = document.querySelector(".journalFormContainer")
 const eventHub = document.querySelector(".mainContainer")
@@ -7,14 +8,17 @@ const noNoBadWords = ["shit", "piss", "cunt", "fuck", "cocksucker", "motherfucke
 
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "publishButton") {
+
+        const moodEntry = document.querySelector("#moodSelect") //reference to the whole <select> bar
+        const moodIdValue = parseInt(moodEntry.value)
         
-        if (document.querySelector("#topicsCovered").value.length < 3) {
+        if (document.querySelector("#topicsCovered").value.length < 10) {
 
             const newEntry = {
                 date: document.querySelector("#journalDate").value,
                 topics: document.querySelector("#topicsCovered").value,
                 entry: document.querySelector("#entryText").value,
-                mood: document.querySelector("#moodSelect").value
+                moodId: moodIdValue
             }
             saveEntry(newEntry)
         } else alert("NOPE")
@@ -74,7 +78,8 @@ if (click was heard on submitedit entry -)
 */
 
 
-const render = () => {
+const render = (moodsArray) => {
+
     contentTarget.innerHTML =
     `
     <article action="" class="journalForm">
@@ -112,18 +117,13 @@ const render = () => {
   <label for="mood"
     >My Mood</label>
     <select name="mood" class="entryForm__moodDropdown" id="moodSelect">
-      <option value="overwhelmed" class="moodDropdown__option"
-        >overwhelmed</option
-      >
-      <option value="excited" class="moodDropdown__option"
-        >excited</option
-      >
-      <option value="Mood 3" class="moodDropdown__option"
-        >confused</option
-      >
-      <option value="grokking" class="moodDropdown__option"
-      >grokking</option
-    >
+      ${
+        moodsArray.map(
+          moodObj => {
+            return `<option value="${moodObj.id}">${moodObj.label}</option>`
+          }
+        )
+      }
     </select>
   </div>
   <button class="entryForm__publishButton" id="publishButton">Publish</button>
@@ -134,6 +134,11 @@ const render = () => {
 }
 
 export const JournalForm = () => {
-    render()
+    getMoods()
+      .then( () => {
+        const moodsArray = useMoods()
+        render(moodsArray)
+      })
+
 }
 
