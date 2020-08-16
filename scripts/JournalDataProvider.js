@@ -31,7 +31,7 @@ export const saveEntry = entryObj => {
     .then(dispatchStateChangeEvent)
 }
 
-export const saveUpdatedEntry = updatedEntryObj => {
+export const updateEntry = updatedEntryObj => {
     return fetch(`http://localhost:3001/entries/${parseInt(updatedEntryObj.id)}`, {
         method: "PUT",
         headers: {

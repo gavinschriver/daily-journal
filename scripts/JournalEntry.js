@@ -1,11 +1,11 @@
-export const JournalEntryCompontent = (entry) => {
+export const JournalEntryCompontent = (entryObj) => {
     return `
-        <article id="entry--${entry.id}" class="journalEntry">
-            <h2>${entry.date}</h2>
-            <section>Topics Covered: ${entry.topics}</section>
-            <section>${entry.entry}</section>
-            <div>Mood: ${entry.mood.label}</div>
-            <button id="edit--${entry.id}">Edit Entry</button>
+        <article id="entry--${entryObj.id}" class="journalEntry">
+            <h2>${entryObj.date}</h2>
+            <section>Topics Covered: ${entryObj.topics}</section>
+            <section>${entryObj.entry}</section>
+            <div>Mood: ${entryObj.mood.label}</div>
+            <button id="editEntry--${entryObj.id}">Edit Entry</button>
         </article>
     `
 }

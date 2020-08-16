@@ -9,10 +9,12 @@ eventHub.addEventListener("journalStateChanged", () => {
 })
 
 eventHub.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id.startsWith("edit--")) {
+    if (clickEvent.target.id.startsWith("editEntry--")) {
+        const [prefix, entryIdFromHTML] = clickEvent.target.id.split("--")
         const editEntryButtonEvent = new CustomEvent ("editButtonClicked",{
+
             detail: {
-                editSelectedEntryId: clickEvent.target.id
+                editEntryId: parseInt(entryIdFromHTML)
             }
         })
         eventHub.dispatchEvent(editEntryButtonEvent)

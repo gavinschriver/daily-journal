@@ -1,87 +1,58 @@
-import { saveEntry} from "./JournalDataProvider.js"
-import { saveUpdatedEntry} from "./JournalDataProvider.js"
-import { getMoods, useMoods } from "./MoodsProvider.js"
+import {
+  saveEntry,
+  updateEntry,
+  useJournalEntries,
+} from "./JournalDataProvider.js";
+import { getMoods, useMoods } from "./MoodsProvider.js";
 
-const contentTarget = document.querySelector(".journalFormContainer")
-const eventHub = document.querySelector(".mainContainer")
-const noNoBadWords = ["shit", "piss", "cunt", "fuck", "cocksucker", "motherfucker", "tits", "fuck", "turd", "twat"]
+const contentTarget = document.querySelector(".journalFormContainer");
+const eventHub = document.querySelector(".mainContainer");
 
-eventHub.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id === "publishButton") {
+eventHub.addEventListener("click", (clickEvent) => {
+  if (clickEvent.target.id === "publishButton") {
+    const id = document.querySelector("#entryId").value;
 
-        const moodEntry = document.querySelector("#moodSelect") //reference to the whole <select> bar
-        const moodIdValue = parseInt(moodEntry.value)
-        
-        if (document.querySelector("#topicsCovered").value.length < 10) {
+    if (id === " ") {
+      const moodEntry = document.querySelector("#moodSelect"); //reference to the whole <select> bar
+      const moodIdValue = parseInt(moodEntry.value);
 
-            const newEntry = {
-                date: document.querySelector("#journalDate").value,
-                topics: document.querySelector("#topicsCovered").value,
-                entry: document.querySelector("#entryText").value,
-                moodId: moodIdValue
-            }
-            saveEntry(newEntry)
-        } else alert("NOPE")
+      if (document.querySelector("#topicsCovered").value.length < 10) {
+        const newEntry = {
+          date: document.querySelector("#journalDate").value,
+          topics: document.querySelector("#topicsCovered").value,
+          entry: document.querySelector("#entryText").value,
+          moodId: moodIdValue,
+        };
+        saveEntry(newEntry);
+      } else alert("NOPE"); //end data validation from line 17
+    } else {
+      const updatedEntry = {
+        id: parseInt(id),
+        date: document.querySelector("#journalDate").value,
+        topics: document.querySelector("#topicsCovered").value,
+        entry: document.querySelector("#entryText").value,
+        moodId: document.querySelector("#moodSelect").value
+      };
+      updateEntry(updatedEntry);
     }
-})
-
-eventHub.addEventListener("editButtonClicked", editButtonEvent => {
-        const [prefix, matchingID] = editButtonEvent.detail.editSelectedEntryId.split("--")
-
-        contentTarget.innerHTML += `
-        <fieldset name="${matchingID}" id="editEntryForm">
-          <textarea id="editEntryText"></textarea>
-          <select id="editEntryMood">
-            <option value="verycoolman">COOL</option>
-          </select>
-          <input type="date" id="editEntryDate">
-          <input type="text" id="editEntryTopics"> 
-          <button id="editEntrySubmitButton">Submit Update</button>
-        </fieldset>
-        `
-})
-
-
-eventHub.addEventListener("click", clickEvent => {
-  if (clickEvent.target.id === "editEntrySubmitButton") {
-    const updatedEntryObj = {
-      id: document.querySelector("#editEntryForm").name,
-      topic: document.querySelector("#editEntryTopics").value,
-      mood: document.querySelector("#editEntryMood").value,
-      entry: document.querySelector("#editEntryText").value,
-      date: document.querySelector("#editEntryDate").value
-    }
-
-    saveUpdatedEntry(updatedEntryObj)
-    console.log(updatedEntryObj)
   }
-})
+});
 
-// // add EL to lsiten HERE for (submit editbutton from form rendered above, which will create new OB
-// populated by field values (including detail passed from edit entry button event )
-// )
-/*
-if (click was heard on submitedit entry -)
-            updatedEntryObj = {
-              id: document.querySelector.id(#editEntryForm).name
-              topic:  (editEntryTopics) .value
-              mood:    (#editEntryMood).value - from dropdown
-              entry:    .value
-              date: DQS(#editEntryDate)
-              (if we had somehting that didnt have a val prop, we could get its innerHTML)
-            }
-
-            updateEntry(updatedEntryObj)
-
-
-
-*/
-
+eventHub.addEventListener("editButtonClicked", (editButtonEvent) => {
+  const idToFind = editButtonEvent.detail.editEntryId;
+  const entriesArray = useJournalEntries();
+  const matchingEntryObj = entriesArray.find((entryObj) => {
+    return entryObj.id === idToFind;
+  });
+  document.querySelector("#topicsCovered").value = matchingEntryObj.topics;
+  document.querySelector("#journalDate").value = matchingEntryObj.date;
+  document.querySelector("#entryText").value = matchingEntryObj.entry;
+  document.querySelector("#moodSelect").value = matchingEntryObj.moodId;
+  document.querySelector("#entryId").value = matchingEntryObj.id;
+});
 
 const render = (moodsArray) => {
-
-    contentTarget.innerHTML =
-    `
+  contentTarget.innerHTML = `
     <article action="" class="journalForm">
 <fieldset class="fieldset">
 
@@ -117,28 +88,22 @@ const render = (moodsArray) => {
   <label for="mood"
     >My Mood</label>
     <select name="mood" class="entryForm__moodDropdown" id="moodSelect">
-      ${
-        moodsArray.map(
-          moodObj => {
-            return `<option value="${moodObj.id}">${moodObj.label}</option>`
-          }
-        )
-      }
+      ${moodsArray.map((moodObj) => {
+        return `<option value="${moodObj.id}">${moodObj.label}</option>`;
+      })}
     </select>
   </div>
   <button class="entryForm__publishButton" id="publishButton">Publish</button>
+  <input type="hidden" name="entryId" id="entryId" value=""> 
 </fieldset>
 
 </article>
-    `
-}
+    `;
+};
 
 export const JournalForm = () => {
-    getMoods()
-      .then( () => {
-        const moodsArray = useMoods()
-        render(moodsArray)
-      })
-
-}
-
+  getMoods().then(() => {
+    const moodsArray = useMoods();
+    render(moodsArray);
+  });
+};
