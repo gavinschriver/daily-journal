@@ -4,9 +4,18 @@ import {
   useJournalEntries,
 } from "./JournalDataProvider.js";
 import { getMoods, useMoods } from "./MoodsProvider.js";
- s
+ 
+
 const contentTarget = document.querySelector(".journalFormContainer");
 const eventHub = document.querySelector(".mainContainer");
+
+eventHub.addEventListener("journalStateChanged", () => {
+  document.querySelector("#topicsCovered").value = "";
+  document.querySelector("#journalDate").value = "";
+  document.querySelector("#entryText").value = "";
+  document.querySelector("#moodSelect").value = "";
+  document.querySelector("#entryId").value = "";
+})
 
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "publishButton") {
