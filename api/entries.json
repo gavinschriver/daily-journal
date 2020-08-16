@@ -2,17 +2,17 @@
   "entries": [
     {
       "id": 1,
-      "date": "07/13/2020",
-      "topics": "Group project",
-      "entry": "Kept practicing github collaboration as we finsihed our `Hello World` Group poject",
-      "moodId": 4
+      "date": "2020-08-13",
+      "topics": "lets gett it cooked up ",
+      "entry": "but wait i need to be able to have this form clear now?",
+      "moodId": "2"
     },
     {
       "id": 3,
-      "date": "07/14/2020",
-      "topics": "lab time; debugging; pro dev",
-      "entry": "Worked on Martin's Aquarium modules, Daily Journal layout",
-      "moodId": 3
+      "date": "2020-08-12",
+      "topics": "HM",
+      "entry": "trying but nott",
+      "moodId": "3"
     },
     {
       "date": "2020-07-03",
@@ -22,31 +22,31 @@
       "id": 5
     },
     {
-      "date": "2020-07-08",
-      "topics": "asdfsdf",
-      "entry": "asdfasdf",
-      "moodId": 1,
-      "id": 6
+      "id": 6,
+      "date": "2020-07-31",
+      "topics": "i got an idea",
+      "entry": "now ?",
+      "moodId": 1
     },
     {
       "id": 7,
-      "date": "2020-08-15",
-      "topics": "closee",
-      "entry": "okay v cl",
-      "moodId": "3"
+      "date": "2020-08-07",
+      "topics": "BUT WAIT",
+      "entry": "what if i wanna reset",
+      "moodId": 1
     },
     {
-      "date": "",
-      "topics": "okay ",
-      "entry": "hmmm yo ",
-      "moodId": 4,
+      "date": "2020-08-12",
+      "topics": "NOT",
+      "entry": "pullng in live?",
+      "moodId": 1,
       "id": 8
     },
     {
-      "date": "",
-      "topics": "",
-      "entry": "",
-      "moodId": 3,
+      "date": "2020-08-19",
+      "topics": "but is it forreal?",
+      "entry": "cause if so this should be id 9 ",
+      "moodId": 1,
       "id": 9
     }
   ],

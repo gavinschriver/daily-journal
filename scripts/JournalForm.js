@@ -4,19 +4,19 @@ import {
   useJournalEntries,
 } from "./JournalDataProvider.js";
 import { getMoods, useMoods } from "./MoodsProvider.js";
-
+ s
 const contentTarget = document.querySelector(".journalFormContainer");
 const eventHub = document.querySelector(".mainContainer");
 
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "publishButton") {
-    const id = document.querySelector("#entryId").value;
 
-    if (id === " ") {
+    const id = document.querySelector("#entryId").value;
+    if (id === "") {
       const moodEntry = document.querySelector("#moodSelect"); //reference to the whole <select> bar
       const moodIdValue = parseInt(moodEntry.value);
 
-      if (document.querySelector("#topicsCovered").value.length < 10) {
+      // if (moodIdValue !== 0) {
         const newEntry = {
           date: document.querySelector("#journalDate").value,
           topics: document.querySelector("#topicsCovered").value,
@@ -24,14 +24,15 @@ eventHub.addEventListener("click", (clickEvent) => {
           moodId: moodIdValue,
         };
         saveEntry(newEntry);
-      } else alert("NOPE"); //end data validation from line 17
+
+      // } else alert("NOPE"); //end data validation from line 17
     } else {
       const updatedEntry = {
         id: parseInt(id),
         date: document.querySelector("#journalDate").value,
         topics: document.querySelector("#topicsCovered").value,
         entry: document.querySelector("#entryText").value,
-        moodId: document.querySelector("#moodSelect").value
+        moodId: parseInt(document.querySelector("#moodSelect").value)
       };
       updateEntry(updatedEntry);
     }
