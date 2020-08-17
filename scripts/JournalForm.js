@@ -4,6 +4,7 @@ import {
   useJournalEntries,
 } from "./JournalDataProvider.js";
 import { getMoods, useMoods } from "./MoodsProvider.js";
+import { getInstructors, useInstructors } from "./InstructorsProvider.js";
  
 
 const contentTarget = document.querySelector(".journalFormContainer");
@@ -59,7 +60,7 @@ eventHub.addEventListener("editButtonClicked", (editButtonEvent) => {
   document.querySelector("#entryId").value = matchingEntryObj.id;
 });
 
-const render = (moodsArray) => {
+const render = (instructorArray, moodsArray) => {
   contentTarget.innerHTML = `
     <article action="" class="journalForm">
 <fieldset class="fieldset">
@@ -93,25 +94,43 @@ const render = (moodsArray) => {
 </div>
 
 <div class="inputWrapper">
-  <label for="mood"
-    >My Mood</label>
-    <select name="mood" class="entryForm__moodDropdown" id="moodSelect">
-      ${moodsArray.map((moodObj) => {
-        return `<option value="${moodObj.id}">${moodObj.label}</option>`;
-      })}
+<label for="instructor">Today's Instruktor</label>
+<select name="instructor" class="entryForm__instructorDropdown" id="instructorSelect">
+${instructorArray.map((instructorObj) => {
+  return `<option value="${instructorObj.id}">${instructorObj.first_name}</option>`
+})}
+</select>
+</div>
+
+<div class="inputWrapper">
+<label for="mood"
+>My Mood</label>
+<select name="mood" class="entryForm__moodDropdown" id="moodSelect">
+        ${moodsArray.map((moodObj) => {
+          return `<option value="${moodObj.id}">${moodObj.label}</option>`;
+        })}
     </select>
-  </div>
-  <button class="entryForm__publishButton" id="publishButton">Publish</button>
-  <input type="hidden" name="entryId" id="entryId" value=""> 
-</fieldset>
+    </div>
+    
+    
+    <button class="entryForm__publishButton" id="publishButton">Publish</button>
+    <input type="hidden" name="entryId" id="entryId" value=""> 
+    </fieldset>
+    
+    </article>
+    `
+  };
+  
+  
+  export const JournalForm = () => {
+    
+    getInstructors()
+      .then(() => getMoods())
+      .then(() => {
+        const currentInstructorArray = useInstructors()
+        const currentMoodArray = useMoods()
+        render(currentInstructorArray, currentMoodArray)
+      })
 
-</article>
-    `;
-};
-
-export const JournalForm = () => {
-  getMoods().then(() => {
-    const moodsArray = useMoods();
-    render(moodsArray);
-  });
-};
+  }
+  
