@@ -27,10 +27,6 @@ eventHub.addEventListener("click", (clickEvent) => {
       const id = document.querySelector("#entryId").value;
 
       if (id === "") {
-        // const moodEntry = document.querySelector("#moodSelect");
-        // const moodIdValue = parseInt(moodEntry.value);
-        // const instructorEntry = document.querySelector("#instructorSelect");
-        // const instructorIdValue = parseInt(instructorEntry.value);
 
         const newEntry = {
           date: document.querySelector("#journalDate").value,
@@ -106,6 +102,7 @@ const render = (instructorArray, moodsArray) => {
 <div class="inputWrapper">
 <label for="instructor">Today's Instruktor</label>
 <select name="instructor" class="entryForm__instructorDropdown" id="instructorSelect">
+          <option value=""></option>
 ${instructorArray.map((instructorObj) => {
   return `<option value="${instructorObj.id}">${instructorObj.first_name}</option>`;
 })}
@@ -116,6 +113,7 @@ ${instructorArray.map((instructorObj) => {
 <label for="mood"
 >My Mood</label>
 <select name="mood" class="entryForm__moodDropdown" id="moodSelect">
+        <option value=""></option>
         ${moodsArray.map((moodObj) => {
           return `<option value="${moodObj.id}">${moodObj.label}</option>`;
         })}

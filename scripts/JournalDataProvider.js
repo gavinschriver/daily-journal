@@ -32,7 +32,7 @@ export const saveEntry = entryObj => {
 }
 
 export const updateEntry = updatedEntryObj => {
-    return fetch(`http://localhost:3001/entries/${parseInt(updatedEntryObj.id)}`, {
+    return fetch(`http://localhost:3001/entries/${updatedEntryObj.id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
