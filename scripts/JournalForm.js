@@ -5,7 +5,6 @@ import {
 } from "./JournalDataProvider.js";
 import { getMoods, useMoods } from "./MoodsProvider.js";
 import { getInstructors, useInstructors } from "./InstructorsProvider.js";
- 
 
 const contentTarget = document.querySelector(".journalFormContainer");
 const eventHub = document.querySelector(".mainContainer");
@@ -16,34 +15,48 @@ eventHub.addEventListener("journalStateChanged", () => {
   document.querySelector("#entryText").value = "";
   document.querySelector("#moodSelect").value = "";
   document.querySelector("#entryId").value = "";
-})
+  document.querySelector("#instructorSelect").value = "";
+});
 
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "publishButton") {
+    if (
+      document.querySelector("#moodSelect").value &&
+      document.querySelector("#instructorSelect").value
+    ) {
+      const id = document.querySelector("#entryId").value;
 
-    const id = document.querySelector("#entryId").value;
-    if (id === "") {
-      const moodEntry = document.querySelector("#moodSelect"); //reference to the whole <select> bar
-      const moodIdValue = parseInt(moodEntry.value);
+      if (id === "") {
+        const moodEntry = document.querySelector("#moodSelect");
+        const moodIdValue = parseInt(moodEntry.value);
+        const instructorEntry = document.querySelector("#instructorSelect");
+        const instructorIdValue = parseInt(instructorEntry.value);
 
         const newEntry = {
           date: document.querySelector("#journalDate").value,
           topics: document.querySelector("#topicsCovered").value,
           entry: document.querySelector("#entryText").value,
           moodId: moodIdValue,
+          instructorId: instructorIdValue,
         };
         saveEntry(newEntry);
-
-    } else {
-      const updatedEntry = {
-        id: parseInt(id),
-        date: document.querySelector("#journalDate").value,
-        topics: document.querySelector("#topicsCovered").value,
-        entry: document.querySelector("#entryText").value,
-        moodId: parseInt(document.querySelector("#moodSelect").value)
-      };
-      updateEntry(updatedEntry);
-    }
+      } else if (
+        document.querySelector("#moodSelect").value &&
+        document.querySelector("#instructorSelect")
+      ) {
+        const updatedEntry = {
+          id: parseInt(id),
+          date: document.querySelector("#journalDate").value,
+          topics: document.querySelector("#topicsCovered").value,
+          entry: document.querySelector("#entryText").value,
+          moodId: parseInt(document.querySelector("#moodSelect").value),
+          instructorId: parseInt(
+            document.querySelector("#instructorSelect").value
+          ),
+        };
+        updateEntry(updatedEntry);
+      }
+    } else alert("yougonnafuckit!!");
   }
 });
 
@@ -97,7 +110,7 @@ const render = (instructorArray, moodsArray) => {
 <label for="instructor">Today's Instruktor</label>
 <select name="instructor" class="entryForm__instructorDropdown" id="instructorSelect">
 ${instructorArray.map((instructorObj) => {
-  return `<option value="${instructorObj.id}">${instructorObj.first_name}</option>`
+  return `<option value="${instructorObj.id}">${instructorObj.first_name}</option>`;
 })}
 </select>
 </div>
@@ -118,19 +131,15 @@ ${instructorArray.map((instructorObj) => {
     </fieldset>
     
     </article>
-    `
-  };
-  
-  
-  export const JournalForm = () => {
-    
-    getInstructors()
-      .then(() => getMoods())
-      .then(() => {
-        const currentInstructorArray = useInstructors()
-        const currentMoodArray = useMoods()
-        render(currentInstructorArray, currentMoodArray)
-      })
+    `;
+};
 
-  }
-  
+export const JournalForm = () => {
+  getInstructors()
+    .then(() => getMoods())
+    .then(() => {
+      const currentInstructorArray = useInstructors();
+      const currentMoodArray = useMoods();
+      render(currentInstructorArray, currentMoodArray);
+    });
+};

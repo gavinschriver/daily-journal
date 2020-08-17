@@ -35,7 +35,7 @@ const render = entries => {
 
 export const EntryListComponent = () => {
     getJournalEntries()
-        .then( (testing) => {
+        .then( () => {
             const entryArray = useJournalEntries()
             render(entryArray)
         })
