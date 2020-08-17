@@ -25,7 +25,6 @@ eventHub.addEventListener("click", (clickEvent) => {
       const moodEntry = document.querySelector("#moodSelect"); //reference to the whole <select> bar
       const moodIdValue = parseInt(moodEntry.value);
 
-      // if (moodIdValue !== 0) {
         const newEntry = {
           date: document.querySelector("#journalDate").value,
           topics: document.querySelector("#topicsCovered").value,
@@ -34,7 +33,6 @@ eventHub.addEventListener("click", (clickEvent) => {
         };
         saveEntry(newEntry);
 
-      // } else alert("NOPE"); //end data validation from line 17
     } else {
       const updatedEntry = {
         id: parseInt(id),
