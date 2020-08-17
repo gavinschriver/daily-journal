@@ -27,23 +27,20 @@ eventHub.addEventListener("click", (clickEvent) => {
       const id = document.querySelector("#entryId").value;
 
       if (id === "") {
-        const moodEntry = document.querySelector("#moodSelect");
-        const moodIdValue = parseInt(moodEntry.value);
-        const instructorEntry = document.querySelector("#instructorSelect");
-        const instructorIdValue = parseInt(instructorEntry.value);
+        // const moodEntry = document.querySelector("#moodSelect");
+        // const moodIdValue = parseInt(moodEntry.value);
+        // const instructorEntry = document.querySelector("#instructorSelect");
+        // const instructorIdValue = parseInt(instructorEntry.value);
 
         const newEntry = {
           date: document.querySelector("#journalDate").value,
           topics: document.querySelector("#topicsCovered").value,
           entry: document.querySelector("#entryText").value,
-          moodId: moodIdValue,
-          instructorId: instructorIdValue,
+          moodId: parseInt(document.querySelector("#moodSelect").value),
+          instructorId: parseInt(document.querySelector("#instructorSelect").value)
         };
         saveEntry(newEntry);
-      } else if (
-        document.querySelector("#moodSelect").value &&
-        document.querySelector("#instructorSelect")
-      ) {
+      } else {
         const updatedEntry = {
           id: parseInt(id),
           date: document.querySelector("#journalDate").value,
