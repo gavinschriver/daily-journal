@@ -2,42 +2,31 @@
   "entries": [
     {
       "id": 1,
-      "date": "2020-08-13",
-      "topics": "lets gett it cooked up ",
-      "entry": "but wait i need to be able to have this form clear now?",
-      "moodId": 2,
-      "instructorId": 1
-    },
-    {
-      "id": 3,
-      "date": "2020-08-12",
-      "topics": "HM",
-      "entry": "trying but nott",
-      "moodId": 3,
-      "instructorId": 3
-    },
-    {
-      "id": 10,
-      "date": "2020-08-11",
-      "topics": "FUCK",
-      "entry": "or not lesseeee",
-      "moodId": 4,
-      "instructorId": 2
-    },
-    {
-      "date": "2020-08-13",
-      "topics": "hm kinda cool ",
-      "entry": "maybe that was it?",
-      "moodId": 2,
-      "id": 11,
-      "instructorId": 1
+      "date": "",
+      "topics": "Some shit",
+      "entry": "some other crap",
+      "moodId": 3
     },
     {
       "date": "",
-      "topics": "",
-      "entry": "",
-      "moodId": null,
-      "id": 12
+      "topics": "sadfsdf",
+      "entry": "oh come on now",
+      "moodId": 4,
+      "id": 2
+    },
+    {
+      "date": "2020-08-13",
+      "topics": "um matt?",
+      "entry": "its working ",
+      "moodId": 4,
+      "id": 3
+    },
+    {
+      "date": "2020-08-17",
+      "topics": "okay",
+      "entry": "dang",
+      "moodId": 3,
+      "id": 4
     }
   ],
   "moods": [
