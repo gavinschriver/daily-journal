@@ -95,6 +95,14 @@
       "moodId": 3,
       "instructorId": 2,
       "id": 14
+    },
+    {
+      "date": "2020-08-02",
+      "topics": "sssaaggga",
+      "entry": "ffff",
+      "moodId": 3,
+      "instructorId": 2,
+      "id": 15
     }
   ],
   "moods": [
@@ -171,6 +179,14 @@
     {
       "subject": "exist",
       "id": 25
+    },
+    {
+      "subject": "saag",
+      "id": 26
+    },
+    {
+      "subject": "paneer",
+      "id": 27
     }
   ]
 }

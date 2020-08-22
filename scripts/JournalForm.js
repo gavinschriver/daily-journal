@@ -2,6 +2,7 @@ import {
   saveEntry,
   updateEntry,
   useJournalEntries,
+  getJournalEntries,
 } from "./JournalDataProvider.js";
 import { getMoods, useMoods } from "./MoodsProvider.js";
 import { getInstructors, useInstructors } from "./InstructorsProvider.js";
@@ -29,6 +30,7 @@ eventHub.addEventListener("tagStateChanged", () => {
 });
 
 eventHub.addEventListener("journalStateChanged", () => {
+  entries = useJournalEntries();
   document.querySelector("#topicsCovered").value = "";
   document.querySelector("#journalDate").value = "";
   document.querySelector("#entryText").value = "";
@@ -61,7 +63,6 @@ eventHub.addEventListener("click", (clickEvent) => {
           subject: newSubject,
         };
       });
-      debugger;
       newTagObjects.forEach((tagObject) => {
         saveTag(tagObject);
       });
@@ -182,7 +183,9 @@ export const JournalForm = () => {
   getInstructors()
     .then(getMoods)
     .then(getTags)
+    .then(getJournalEntries)
     .then(() => {
+      entries = useJournalEntries();
       tags = useTags();
       setSubjects();
       const currentInstructorArray = useInstructors();
