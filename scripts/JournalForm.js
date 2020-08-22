@@ -9,6 +9,9 @@ import { getInstructors, useInstructors } from "./InstructorsProvider.js";
 const contentTarget = document.querySelector(".journalFormContainer");
 const eventHub = document.querySelector(".mainContainer");
 
+//dum dum dummy subjects
+let subjects = ["fart", "carp", "crabbp", "snag"];
+
 eventHub.addEventListener("journalStateChanged", () => {
   document.querySelector("#topicsCovered").value = "";
   document.querySelector("#journalDate").value = "";
@@ -24,16 +27,23 @@ eventHub.addEventListener("click", (clickEvent) => {
       document.querySelector("#moodSelect").value &&
       document.querySelector("#instructorSelect").value
     ) {
+      //lets look at some tags and save some tags!!!
+      const currentEntrySubjectsString = document.querySelector("#tagInput")
+        .value;
+      const arrayOfCurrentEntrySubjects = currentEntrySubjectsString.split(",");
+
+      // assign value of id to a var for the HELLOF IT jk to check and see if it exist already
       const id = document.querySelector("#entryId").value;
 
       if (id === "") {
-
         const newEntry = {
           date: document.querySelector("#journalDate").value,
           topics: document.querySelector("#topicsCovered").value,
           entry: document.querySelector("#entryText").value,
           moodId: parseInt(document.querySelector("#moodSelect").value),
-          instructorId: parseInt(document.querySelector("#instructorSelect").value)
+          instructorId: parseInt(
+            document.querySelector("#instructorSelect").value
+          ),
         };
         saveEntry(newEntry);
       } else {
@@ -110,6 +120,12 @@ ${instructorArray.map((instructorObj) => {
 </div>
 
 <div class="inputWrapper">
+<label for="tags">
+Tags</label>
+<input type="text" class="entryForm__textInput" name="tagInput" id="tagInput">
+</div>
+
+<div class="inputWrapper">
 <label for="mood"
 >My Mood</label>
 <select name="mood" class="entryForm__moodDropdown" id="moodSelect">
@@ -119,7 +135,7 @@ ${instructorArray.map((instructorObj) => {
         })}
     </select>
     </div>
-    
+  
     
     <button class="entryForm__publishButton" id="publishButton">Publish</button>
     <input type="hidden" name="entryId" id="entryId" value=""> 
@@ -131,7 +147,7 @@ ${instructorArray.map((instructorObj) => {
 
 export const JournalForm = () => {
   getInstructors()
-    .then(() => getMoods())
+    .then(getMoods)
     .then(() => {
       const currentInstructorArray = useInstructors();
       const currentMoodArray = useMoods();

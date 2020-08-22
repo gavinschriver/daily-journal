@@ -1,56 +1,50 @@
-import { getJournalEntries, useJournalEntries } from "./JournalDataProvider.js"
-import { JournalEntryCompontent } from "./JournalEntry.js"
+import { getJournalEntries, useJournalEntries } from "./JournalDataProvider.js";
+import { JournalEntryCompontent } from "./JournalEntry.js";
 
-const entryLog = document.querySelector(".journalEntryListContainer")
-const eventHub = document.querySelector(".mainContainer")
+const entryLog = document.querySelector(".journalEntryListContainer");
+const eventHub = document.querySelector(".mainContainer");
 
 eventHub.addEventListener("journalStateChanged", () => {
-    EntryListComponent()
-})
+  EntryListComponent();
+});
 
-eventHub.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id.startsWith("editEntry--")) {
-        const [prefix, entryIdFromHTML] = clickEvent.target.id.split("--")
-        const editEntryButtonEvent = new CustomEvent ("editButtonClicked",{
+eventHub.addEventListener("click", (clickEvent) => {
+  if (clickEvent.target.id.startsWith("editEntry--")) {
+    const [prefix, entryIdFromHTML] = clickEvent.target.id.split("--");
+    const editEntryButtonEvent = new CustomEvent("editButtonClicked", {
+      detail: {
+        editEntryId: parseInt(entryIdFromHTML),
+      },
+    });
+    eventHub.dispatchEvent(editEntryButtonEvent);
+  }
+});
 
-            detail: {
-                editEntryId: parseInt(entryIdFromHTML)
-            }
-        })
-        eventHub.dispatchEvent(editEntryButtonEvent)
-    } 
-})
+const render = (entries) => {
+  const entryListHTML = entries
+    .map((entryObj) => {
+      return JournalEntryCompontent(entryObj);
+    })
+    .reverse()
+    .join("");
 
-
-const render = entries => {
-
-    const entryListHTML =
-        entries.map(entryObj => {
-            return JournalEntryCompontent(entryObj)
-        }).reverse().join("")
-    
-    entryLog.innerHTML = entryListHTML
-
-}
+  entryLog.innerHTML = entryListHTML;
+};
 
 export const EntryListComponent = () => {
-    getJournalEntries()
-        .then( () => {
-            const entryArray = useJournalEntries()
-            render(entryArray)
-        })
-}
-
-
-
+  getJournalEntries().then(() => {
+    const entryArray = useJournalEntries();
+    render(entryArray);
+  });
+};
 
 // export const EntryListComponent = ( ) => {
 
 //     return getJournalEntries().then( () => {
-        
+
 //     const entries = useJournalEntries()
 
-//     entryLog.innerHTML = 
+//     entryLog.innerHTML =
 //         entries.map(entry => {
 //             return JournalEntryCompontent(entry)
 //         }).reverse().join("")
@@ -59,6 +53,5 @@ export const EntryListComponent = () => {
 
 // }
 
-    
-//EntryListComponent() HAS a return value 
+//EntryListComponent() HAS a return value
 //() means INVOKE (if empty, just means no params needed)
