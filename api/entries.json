@@ -95,5 +95,18 @@
       "expertise": "peacin' the EFF OUT"
     }
   ],
-  "tags": []
+  "tags": [
+    {
+      "id": 7,
+      "subject": "carp"
+    },
+    {
+      "id": 4,
+      "subject": "crunk"
+    },
+    {
+      "id": 2,
+      "subject": "clamp"
+    }
+  ]
 }

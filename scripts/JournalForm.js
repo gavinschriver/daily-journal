@@ -10,7 +10,17 @@ const contentTarget = document.querySelector(".journalFormContainer");
 const eventHub = document.querySelector(".mainContainer");
 
 //dum dum dummy subjects
-let subjects = ["fart", "carp", "crabbp", "snag"];
+let entriesTags = [];
+let entries = [];
+let tags = [];
+let subjects = [];
+
+//function to refresh the subjects array when tags gets refreshedd
+const setSubjects = () => {
+  subjects = tags.map((tag) => {
+    return tag.subject;
+  });
+};
 
 eventHub.addEventListener("journalStateChanged", () => {
   document.querySelector("#topicsCovered").value = "";
@@ -21,7 +31,7 @@ eventHub.addEventListener("journalStateChanged", () => {
   document.querySelector("#instructorSelect").value = "";
 });
 
-//add el for if tag state changes so that tags can be RELOADDEDD FUCK now i gotta PARSE my shUTT
+//add el for if tag state changes so that tags can be RELOADDEDD FUCK now i gotta PARSE my
 
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "publishButton") {
