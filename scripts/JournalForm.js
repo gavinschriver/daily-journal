@@ -34,11 +34,11 @@ eventHub.addEventListener("tagStateChanged", () => {
     });
   });
   setSubjects();
-  debugger;
 });
 
 eventHub.addEventListener("journalStateChanged", () => {
   entries = useJournalEntries();
+
   document.querySelector("#topicsCovered").value = "";
   document.querySelector("#journalDate").value = "";
   document.querySelector("#entryText").value = "";
@@ -52,7 +52,6 @@ eventHub.addEventListener("journalStateChanged", () => {
 
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "publishButton") {
-    debugger;
     if (
       document.querySelector("#moodSelect").value &&
       document.querySelector("#instructorSelect").value
@@ -90,8 +89,15 @@ eventHub.addEventListener("click", (clickEvent) => {
             });
           }
         );
+
+        const newEntriesTags = matchingTagObjects.map((matchingTag) => {
+          return {
+            entryId: entries[0].id,
+            tagId: matchingTag.id,
+          };
+        });
+        debugger;
       }
-      debugger;
       // assign value of id to a var for the HELLOF IT jk to check and see if it exist already
       const id = document.querySelector("#entryId").value;
 
