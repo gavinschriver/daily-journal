@@ -47,6 +47,41 @@ eventHub.addEventListener("tagStateChanged", () => {
 eventHub.addEventListener("journalStateChanged", () => {
   entries = useJournalEntries();
 
+  const subjectSet = new Set(subjects);
+  const newSubjectsArray = arrayOfCurrentEntrySubjects.filter(
+    (currentSubject) => {
+      return !subjectSet.has(currentSubject);
+    }
+  );
+
+  //wrap this is in an IF to see IF there are new subjects to convert into tags
+  if (newSubjectsArray.length > 0) {
+    //IF there ARE new subjects to convert into tags,  then we'll wait to run the function that finds and returns/sets matchingTagObjects until AFTER
+    //EVENT listener for tag creation/update happens
+    const newTagObjects = newSubjectsArray.map((newSubject) => {
+      return {
+        subject: newSubject,
+      };
+    });
+    newTagObjects.forEach((tagObject) => {
+      saveTag(tagObject);
+    });
+  } else {
+    //if there ARENT any new tags to create, go ahead and, still within the immediate context of the click event, update matchingTagObjects
+    matchingTagObjects = arrayOfCurrentEntrySubjects.map((currentSubject) => {
+      return tags.find((tagObj) => {
+        return currentSubject === tagObj.subject;
+      });
+    });
+
+    const newEntriesTags = matchingTagObjects.map((matchingTag) => {
+      return {
+        entryId: entries[0].id,
+        tagId: matchingTag.id,
+      };
+    });
+  }
+
   document.querySelector("#topicsCovered").value = "";
   document.querySelector("#journalDate").value = "";
   document.querySelector("#entryText").value = "";
@@ -69,42 +104,7 @@ eventHub.addEventListener("click", (clickEvent) => {
         .value;
       arrayOfCurrentEntrySubjects = currentEntrySubjectsString.split(",");
       // create a new Set based on the current (pre-"save-if-necessary")
-      const subjectSet = new Set(subjects);
-      const newSubjectsArray = arrayOfCurrentEntrySubjects.filter(
-        (currentSubject) => {
-          return !subjectSet.has(currentSubject);
-        }
-      );
 
-      //wrap this is in an IF to see IF there are new subjects to convert into tags
-      if (newSubjectsArray.length > 0) {
-        //IF there ARE new subjects to convert into tags,  then we'll wait to run the function that finds and returns/sets matchingTagObjects until AFTER
-        //EVENT listener for tag creation/update happens
-        const newTagObjects = newSubjectsArray.map((newSubject) => {
-          return {
-            subject: newSubject,
-          };
-        });
-        newTagObjects.forEach((tagObject) => {
-          saveTag(tagObject);
-        });
-      } else {
-        //if there ARENT any new tags to create, go ahead and, still within the immediate context of the click event, update matchingTagObjects
-        matchingTagObjects = arrayOfCurrentEntrySubjects.map(
-          (currentSubject) => {
-            return tags.find((tagObj) => {
-              return currentSubject === tagObj.subject;
-            });
-          }
-        );
-
-        const newEntriesTags = matchingTagObjects.map((matchingTag) => {
-          return {
-            entryId: entries[0].id,
-            tagId: matchingTag.id,
-          };
-        });
-      }
       // assign value of id to a var for the HELLOF IT jk to check and see if it exist already
       const id = document.querySelector("#entryId").value;
 
