@@ -24,7 +24,9 @@ const setSubjects = () => {
 };
 
 eventHub.addEventListener("tagStateChanged", () => {
-  alert("OH HALPPOOO dahlingg");
+  tags = useTags();
+  setSubjects();
+  debugger;
 });
 
 eventHub.addEventListener("journalStateChanged", () => {
