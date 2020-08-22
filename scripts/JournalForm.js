@@ -33,7 +33,7 @@ eventHub.addEventListener("tagStateChanged", () => {
       return currentSubject === tagObj.subject;
     });
   });
-  console.log(matchingTagObjects);
+  // console.log(matchingTagObjects);
   const newestEntriesTags = matchingTagObjects.map((matchingTag) => {
     return {
       entryId: entries[0].id,
@@ -225,6 +225,9 @@ export const JournalForm = () => {
     .then(getJournalEntries)
     .then(() => {
       entries = useJournalEntries();
+      entries.sort((entryA, entryB) => {
+        return entryB.id - entryA.id;
+      });
       tags = useTags();
       setSubjects();
       const currentInstructorArray = useInstructors();
