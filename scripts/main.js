@@ -7,12 +7,12 @@ import { getMoods, useMoods } from "./MoodsProvider.js";
 JournalForm();
 EntryListComponent();
 
-getInstructors()
-  .then(() => {
-    const testInstrucotrs = useInstructors();
-    console.log(testInstrucotrs);
-  })
-  .then(() => {
-    const testMoods = useMoods();
-    console.log(testMoods);
-  });
+// getInstructors()
+//   .then(() => {
+//     const testInstrucotrs = useInstructors();
+//     console.log(testInstrucotrs);
+//   })
+//   .then(() => {
+//     const testMoods = useMoods();
+//     console.log(testMoods);
+//   });

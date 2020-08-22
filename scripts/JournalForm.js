@@ -33,6 +33,14 @@ eventHub.addEventListener("tagStateChanged", () => {
       return currentSubject === tagObj.subject;
     });
   });
+  console.log(matchingTagObjects);
+  const newestEntriesTags = matchingTagObjects.map((matchingTag) => {
+    return {
+      entryId: entries[0].id,
+      tagId: matchingTag.id,
+    };
+  });
+  console.log(newestEntriesTags);
   setSubjects();
 });
 
@@ -70,7 +78,7 @@ eventHub.addEventListener("click", (clickEvent) => {
 
       //wrap this is in an IF to see IF there are new subjects to convert into tags
       if (newSubjectsArray.length > 0) {
-        //IF there are new subjects to convert into tags,  then we'll wait to run the function that finds and returns/sets matchingTagObjects until AFTER
+        //IF there ARE new subjects to convert into tags,  then we'll wait to run the function that finds and returns/sets matchingTagObjects until AFTER
         //EVENT listener for tag creation/update happens
         const newTagObjects = newSubjectsArray.map((newSubject) => {
           return {
@@ -96,7 +104,6 @@ eventHub.addEventListener("click", (clickEvent) => {
             tagId: matchingTag.id,
           };
         });
-        debugger;
       }
       // assign value of id to a var for the HELLOF IT jk to check and see if it exist already
       const id = document.querySelector("#entryId").value;
