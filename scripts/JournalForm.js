@@ -26,7 +26,6 @@ const setSubjects = () => {
 eventHub.addEventListener("tagStateChanged", () => {
   tags = useTags();
   setSubjects();
-  debugger;
 });
 
 eventHub.addEventListener("journalStateChanged", () => {
@@ -62,7 +61,7 @@ eventHub.addEventListener("click", (clickEvent) => {
           subject: newSubject,
         };
       });
-
+      debugger;
       newTagObjects.forEach((tagObject) => {
         saveTag(tagObject);
       });
@@ -185,6 +184,7 @@ export const JournalForm = () => {
     .then(getTags)
     .then(() => {
       tags = useTags();
+      setSubjects();
       const currentInstructorArray = useInstructors();
       const currentMoodArray = useMoods();
       render(currentInstructorArray, currentMoodArray);
