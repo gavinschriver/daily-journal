@@ -5,6 +5,7 @@ import {
 } from "./JournalDataProvider.js";
 import { getMoods, useMoods } from "./MoodsProvider.js";
 import { getInstructors, useInstructors } from "./InstructorsProvider.js";
+import { getTags, useTags, saveTag } from "./TagsProvider.js";
 
 const contentTarget = document.querySelector(".journalFormContainer");
 const eventHub = document.querySelector(".mainContainer");
@@ -21,6 +22,10 @@ const setSubjects = () => {
     return tag.subject;
   });
 };
+
+eventHub.addEventListener("tagStateChanged", () => {
+  alert("OH HALPPOOO dahlingg");
+});
 
 eventHub.addEventListener("journalStateChanged", () => {
   document.querySelector("#topicsCovered").value = "";
@@ -54,6 +59,10 @@ eventHub.addEventListener("click", (clickEvent) => {
         return {
           subject: newSubject,
         };
+      });
+
+      newTagObjects.forEach((tagObject) => {
+        saveTag(tagObject);
       });
       // assign value of id to a var for the HELLOF IT jk to check and see if it exist already
       const id = document.querySelector("#entryId").value;
@@ -171,7 +180,9 @@ Tags</label>
 export const JournalForm = () => {
   getInstructors()
     .then(getMoods)
+    .then(getTags)
     .then(() => {
+      tags = useTags();
       const currentInstructorArray = useInstructors();
       const currentMoodArray = useMoods();
       render(currentInstructorArray, currentMoodArray);
