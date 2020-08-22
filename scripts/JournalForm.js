@@ -21,6 +21,8 @@ eventHub.addEventListener("journalStateChanged", () => {
   document.querySelector("#instructorSelect").value = "";
 });
 
+//add el for if tag state changes so that tags can be RELOADDEDD FUCK now i gotta PARSE my shUTT
+
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "publishButton") {
     if (
@@ -31,7 +33,18 @@ eventHub.addEventListener("click", (clickEvent) => {
       const currentEntrySubjectsString = document.querySelector("#tagInput")
         .value;
       const arrayOfCurrentEntrySubjects = currentEntrySubjectsString.split(",");
+      const subjectSet = new Set(subjects);
+      const newSubjectsArray = arrayOfCurrentEntrySubjects.filter(
+        (currentSubject) => {
+          return !subjectSet.has(currentSubject);
+        }
+      );
 
+      const newTagObjects = newSubjectsArray.map((newSubject) => {
+        return {
+          subject: newSubject,
+        };
+      });
       // assign value of id to a var for the HELLOF IT jk to check and see if it exist already
       const id = document.querySelector("#entryId").value;
 

@@ -39,6 +39,22 @@
       "moodId": 2,
       "instructorId": 2,
       "id": 7
+    },
+    {
+      "date": "2020-08-12",
+      "topics": "asdfasf",
+      "entry": "OKAYYY!",
+      "moodId": 4,
+      "instructorId": 1,
+      "id": 8
+    },
+    {
+      "date": "",
+      "topics": "more stuff",
+      "entry": "okay SON",
+      "moodId": 2,
+      "instructorId": 3,
+      "id": 9
     }
   ],
   "moods": [
@@ -78,5 +94,6 @@
       "last_name": "Hardlyknewya",
       "expertise": "peacin' the EFF OUT"
     }
-  ]
+  ],
+  "tags": []
 }
