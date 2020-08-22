@@ -103,6 +103,54 @@
       "moodId": 3,
       "instructorId": 2,
       "id": 15
+    },
+    {
+      "date": "2020-08-06",
+      "topics": "some",
+      "entry": "faces like",
+      "moodId": 3,
+      "instructorId": 2,
+      "id": 16
+    },
+    {
+      "date": "2020-08-06",
+      "topics": "trying",
+      "entry": "set arrayofcurrentstrings to be mod scoped",
+      "moodId": 3,
+      "instructorId": 3,
+      "id": 17
+    },
+    {
+      "date": "2020-08-11",
+      "topics": "sotfff",
+      "entry": "test for only existing tags to populate matchingTagObjects",
+      "moodId": 4,
+      "instructorId": 3,
+      "id": 18
+    },
+    {
+      "date": "2020-08-12",
+      "topics": "bleh",
+      "entry": "okay TRY AGAIN gd debugger",
+      "moodId": 3,
+      "instructorId": 3,
+      "id": 19
+    },
+    {
+      "date": "2020-08-13",
+      "topics": "asNAHHH",
+      "entry": "test with NEW GUYS",
+      "moodId": 1,
+      "instructorId": 2,
+      "id": 20
+    },
+    {
+      "date": "2020-08-11",
+      "topics": "moree",
+      "entry": "testing",
+      "moodId": 4,
+      "instructorId": 2,
+      "id": 21
     }
   ],
   "moods": [
@@ -187,6 +235,34 @@
     {
       "subject": "paneer",
       "id": 27
+    },
+    {
+      "subject": "and",
+      "id": 28
+    },
+    {
+      "subject": "sotherthings",
+      "id": 29
+    },
+    {
+      "subject": "stuff",
+      "id": 30
+    },
+    {
+      "subject": "thingies",
+      "id": 31
+    },
+    {
+      "subject": "aye",
+      "id": 32
+    },
+    {
+      "subject": "new",
+      "id": 33
+    },
+    {
+      "subject": "forever",
+      "id": 34
     }
   ]
 }

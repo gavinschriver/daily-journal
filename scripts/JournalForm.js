@@ -16,6 +16,8 @@ let entriesTags = [];
 let entries = [];
 let tags = [];
 let subjects = [];
+let arrayOfCurrentEntrySubjects = [];
+let matchingTagObjects = [];
 
 //function to refresh the subjects array when tags gets refreshedd
 const setSubjects = () => {
@@ -26,7 +28,13 @@ const setSubjects = () => {
 
 eventHub.addEventListener("tagStateChanged", () => {
   tags = useTags();
+  matchingTagObjects = arrayOfCurrentEntrySubjects.map((currentSubject) => {
+    return tags.find((tagObj) => {
+      return currentSubject === tagObj.subject;
+    });
+  });
   setSubjects();
+  debugger;
 });
 
 eventHub.addEventListener("journalStateChanged", () => {
@@ -39,10 +47,12 @@ eventHub.addEventListener("journalStateChanged", () => {
   document.querySelector("#instructorSelect").value = "";
 });
 
-//add el for if tag state changes so that tags can be RELOADDEDD FUCK now i gotta PARSE my
+//add el for if tag state changes so that tags can be RELOADDEDD FUCK now i gotta PARSE subjects so they can refresh the let subjects = []
+// SUBJECTS string
 
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "publishButton") {
+    debugger;
     if (
       document.querySelector("#moodSelect").value &&
       document.querySelector("#instructorSelect").value
@@ -50,7 +60,8 @@ eventHub.addEventListener("click", (clickEvent) => {
       //lets look at some tags and save some tags!!!
       const currentEntrySubjectsString = document.querySelector("#tagInput")
         .value;
-      const arrayOfCurrentEntrySubjects = currentEntrySubjectsString.split(",");
+      arrayOfCurrentEntrySubjects = currentEntrySubjectsString.split(",");
+      // create a new Set based on the current (pre-"save-if-necessary")
       const subjectSet = new Set(subjects);
       const newSubjectsArray = arrayOfCurrentEntrySubjects.filter(
         (currentSubject) => {
@@ -58,14 +69,29 @@ eventHub.addEventListener("click", (clickEvent) => {
         }
       );
 
-      const newTagObjects = newSubjectsArray.map((newSubject) => {
-        return {
-          subject: newSubject,
-        };
-      });
-      newTagObjects.forEach((tagObject) => {
-        saveTag(tagObject);
-      });
+      //wrap this is in an IF to see IF there are new subjects to convert into tags
+      if (newSubjectsArray.length > 0) {
+        //IF there are new subjects to convert into tags,  then we'll wait to run the function that finds and returns/sets matchingTagObjects until AFTER
+        //EVENT listener for tag creation/update happens
+        const newTagObjects = newSubjectsArray.map((newSubject) => {
+          return {
+            subject: newSubject,
+          };
+        });
+        newTagObjects.forEach((tagObject) => {
+          saveTag(tagObject);
+        });
+      } else {
+        //if there ARENT any new tags to create, go ahead and, still within the immediate context of the click event, update matchingTagObjects
+        matchingTagObjects = arrayOfCurrentEntrySubjects.map(
+          (currentSubject) => {
+            return tags.find((tagObj) => {
+              return currentSubject === tagObj.subject;
+            });
+          }
+        );
+      }
+      debugger;
       // assign value of id to a var for the HELLOF IT jk to check and see if it exist already
       const id = document.querySelector("#entryId").value;
 
