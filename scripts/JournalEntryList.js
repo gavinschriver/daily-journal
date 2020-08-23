@@ -1,11 +1,35 @@
 import { getJournalEntries, useJournalEntries } from "./JournalDataProvider.js";
 import { JournalEntryCompontent } from "./JournalEntry.js";
+import { useTags, getTags } from "./TagsProvider.js";
+import { useEntriesTags, getEntriesTags } from "./EntriesTagsProvider.js";
 
 const entryLog = document.querySelector(".journalEntryListContainer");
 const eventHub = document.querySelector(".mainContainer");
 
-eventHub.addEventListener("journalStateChanged", () => {
-  EntryListComponent();
+//Declare component varaibles
+let entries = [];
+let tags = [];
+let entriesTags = [];
+
+export const EntryListComponent = () => {
+  getJournalEntries()
+    .then(getTags)
+    .then(getEntriesTags)
+    .then(() => {
+      entries = useJournalEntries();
+      tags = useTags();
+      entriesTags = useEntriesTags();
+
+      render();
+    });
+};
+
+eventHub.addEventListener("entriesTagsStateChanged", () => {
+  entries = useJournalEntries();
+  tags = useTags();
+  entriesTags = useEntriesTags();
+
+  render();
 });
 
 eventHub.addEventListener("click", (clickEvent) => {
@@ -28,38 +52,22 @@ eventHub.addEventListener("click", (clickEvent) => {
   }
 });
 
-const render = (entries) => {
-  const entryListHTML = entries
+const render = () => {
+  const entryHTML = entries
     .map((entryObj) => {
-      return JournalEntryCompontent(entryObj);
+      const matchingEntriesTags = entriesTags.filter((entriesTagsObj) => {
+        return entryObj.id === entriesTagsObj.entryId;
+      });
+
+      const matchingTags = matchingEntriesTags.map((matchingETObj) => {
+        return tags.find((tagObj) => {
+          return matchingETObj.tagId === tagObj.id;
+        });
+      });
+
+      return JournalEntryCompontent(entryObj, matchingTags);
     })
-    .reverse()
     .join("");
 
-  entryLog.innerHTML = entryListHTML;
+  entryLog.innerHTML = entryHTML;
 };
-
-export const EntryListComponent = () => {
-  getJournalEntries().then(() => {
-    const entryArray = useJournalEntries();
-    render(entryArray);
-  });
-};
-
-// export const EntryListComponent = ( ) => {
-
-//     return getJournalEntries().then( () => {
-
-//     const entries = useJournalEntries()
-
-//     entryLog.innerHTML =
-//         entries.map(entry => {
-//             return JournalEntryCompontent(entry)
-//         }).reverse().join("")
-
-//     }) //end .then
-
-// }
-
-//EntryListComponent() HAS a return value
-//() means INVOKE (if empty, just means no params needed)

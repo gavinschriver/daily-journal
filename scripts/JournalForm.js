@@ -16,7 +16,7 @@ import {
 const contentTarget = document.querySelector(".journalFormContainer");
 const eventHub = document.querySelector(".mainContainer");
 
-//Component-level variables
+//Declare component-level variables
 let entriesTags = [];
 let entries = [];
 let tags = [];
