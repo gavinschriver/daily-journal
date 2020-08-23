@@ -68,17 +68,7 @@ const createEntriesTags = () => {
 
 eventHub.addEventListener("tagStateChanged", () => {
   tags = useTags();
-  matchingTagObjects = arrayOfCurrentEntrySubjects.map((currentSubject) => {
-    return tags.find((tagObj) => {
-      return currentSubject === tagObj.subject;
-    });
-  });
-  const newestEntriesTags = matchingTagObjects.map((matchingTag) => {
-    return {
-      entryId: entries[entries.length - 1].id,
-      tagId: matchingTag.id,
-    };
-  });
+  createEntriesTags();
   setSubjects();
 });
 
@@ -91,7 +81,7 @@ eventHub.addEventListener("journalStateChanged", () => {
       return !subjectSet.has(currentSubject);
     }
   );
-  //if new tags are needed, save them - then jump into "tagStateEvent" callback to finish process of making new entrieTags
+  //if new tags are needed, save them - then jump into "tagStateEvent" callback to finish process of making new entriesTags
   if (newSubjectsArray.length > 0) {
     const newTagObjects = newSubjectsArray.map((newSubject) => {
       return {
