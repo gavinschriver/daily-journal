@@ -67,6 +67,7 @@ const render = () => {
 
       return JournalEntryCompontent(entryObj, matchingTags);
     })
+    .reverse()
     .join("");
 
   entryLog.innerHTML = entryHTML;
