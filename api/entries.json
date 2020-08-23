@@ -17,238 +17,6 @@
       "id": 3
     },
     {
-      "id": 5,
-      "date": "2020-08-17",
-      "topics": "tuggin and",
-      "entry": "debuggin",
-      "moodId": 3,
-      "instructorId": 3
-    },
-    {
-      "id": 6,
-      "date": "2020-08-14",
-      "topics": "okay nrw hingg",
-      "entry": "NEWW",
-      "moodId": 3,
-      "instructorId": 2
-    },
-    {
-      "date": "2020-08-13",
-      "topics": "Some shit",
-      "entry": "lezdodit",
-      "moodId": 2,
-      "instructorId": 2,
-      "id": 7
-    },
-    {
-      "date": "2020-08-12",
-      "topics": "asdfasf",
-      "entry": "OKAYYY!",
-      "moodId": 4,
-      "instructorId": 1,
-      "id": 8
-    },
-    {
-      "date": "2020-08-13",
-      "topics": "Sptyy",
-      "entry": "lnoerr",
-      "moodId": 1,
-      "instructorId": 2,
-      "id": 37
-    },
-    {
-      "date": "",
-      "topics": "more stuff",
-      "entry": "okay SON",
-      "moodId": 2,
-      "instructorId": 3,
-      "id": 9
-    },
-    {
-      "date": "2020-08-02",
-      "topics": "nooo",
-      "entry": "yasss",
-      "moodId": 1,
-      "instructorId": 3,
-      "id": 10
-    },
-    {
-      "date": "2020-08-20",
-      "topics": "Some yuuu",
-      "entry": "coolapproach",
-      "moodId": 2,
-      "instructorId": 1,
-      "id": 38
-    },
-    {
-      "date": "2020-08-26",
-      "topics": "danggg",
-      "entry": "hmm should be like. 39 on id or something?",
-      "moodId": 3,
-      "instructorId": 3,
-      "id": 39
-    },
-    {
-      "date": "2020-08-21",
-      "topics": "something",
-      "entry": "fornothing",
-      "moodId": 3,
-      "instructorId": 2,
-      "id": 40
-    },
-    {
-      "date": "2020-08-11",
-      "topics": "fff",
-      "entry": "gggg",
-      "moodId": 2,
-      "instructorId": 2,
-      "id": 41
-    },
-    {
-      "date": "2020-08-05",
-      "topics": "asdfasf",
-      "entry": "okkk",
-      "moodId": 1,
-      "instructorId": 3,
-      "id": 42
-    },
-    {
-      "date": "2020-08-19",
-      "topics": "Some shit",
-      "entry": "mo",
-      "moodId": 3,
-      "instructorId": 2,
-      "id": 43
-    },
-    {
-      "date": "2020-08-26",
-      "topics": "asdfasfnnn",
-      "entry": "mmooo",
-      "moodId": 4,
-      "instructorId": 2,
-      "id": 44
-    },
-    {
-      "date": "",
-      "topics": "mort",
-      "entry": "negg",
-      "moodId": 1,
-      "instructorId": 3,
-      "id": 45
-    },
-    {
-      "date": "2020-08-12",
-      "topics": "carpppb",
-      "entry": "grannby",
-      "moodId": 4,
-      "instructorId": 1,
-      "id": 46
-    },
-    {
-      "date": "2020-08-06",
-      "topics": "Some shit",
-      "entry": "more shittt",
-      "moodId": 2,
-      "instructorId": 1,
-      "id": 47
-    },
-    {
-      "date": "2020-08-19",
-      "topics": "mor",
-      "entry": "is it kinda workting tho?",
-      "moodId": 4,
-      "instructorId": 1,
-      "id": 48
-    },
-    {
-      "date": "2020-08-19",
-      "topics": "stomeess",
-      "entry": "THINGIESS",
-      "moodId": 4,
-      "instructorId": 3,
-      "id": 49
-    },
-    {
-      "date": "2020-08-19",
-      "topics": "nawww",
-      "entry": "okayy",
-      "moodId": 3,
-      "instructorId": 1,
-      "id": 50
-    },
-    {
-      "date": "2020-08-12",
-      "topics": "feeggg",
-      "entry": "oyheayhh",
-      "moodId": 3,
-      "instructorId": 1,
-      "id": 51
-    },
-    {
-      "date": "2020-08-11",
-      "topics": "danngggies",
-      "entry": "oop",
-      "moodId": 1,
-      "instructorId": 1,
-      "id": 52
-    },
-    {
-      "date": "",
-      "topics": "Someoree",
-      "entry": "okaythennn",
-      "moodId": 4,
-      "instructorId": 3,
-      "id": 53
-    },
-    {
-      "date": "2020-08-12",
-      "topics": "asdfsadf",
-      "entry": "mm",
-      "moodId": 1,
-      "instructorId": 2,
-      "id": 54
-    },
-    {
-      "date": "2020-08-11",
-      "topics": "dddd",
-      "entry": "rreddd",
-      "moodId": 1,
-      "instructorId": 3,
-      "id": 55
-    },
-    {
-      "date": "2020-08-06",
-      "topics": "only",
-      "entry": "renderinggandstugg",
-      "moodId": 2,
-      "instructorId": 1,
-      "id": 56
-    },
-    {
-      "date": "2020-08-14",
-      "topics": "ffff",
-      "entry": "neesssss",
-      "moodId": 4,
-      "instructorId": 3,
-      "id": 57
-    },
-    {
-      "date": "2020-08-20",
-      "topics": "lookie",
-      "entry": "ddaabngg",
-      "moodId": 1,
-      "instructorId": 1,
-      "id": 58
-    },
-    {
-      "date": "2020-08-06",
-      "topics": "latest shut",
-      "entry": "ddddangg",
-      "moodId": 4,
-      "instructorId": 1,
-      "id": 59
-    },
-    {
       "date": "2020-08-05",
       "topics": "dorernn",
       "entry": "dannerrgy",
@@ -287,6 +55,62 @@
       "moodId": 3,
       "instructorId": 2,
       "id": 64
+    },
+    {
+      "date": "2020-08-12",
+      "topics": "anothuaa",
+      "entry": "test for ET creation w/ existing tag",
+      "moodId": 4,
+      "instructorId": 1,
+      "id": 65
+    },
+    {
+      "date": "2020-08-12",
+      "topics": "gmmm",
+      "entry": "shouldd",
+      "moodId": 3,
+      "instructorId": 3,
+      "id": 66
+    },
+    {
+      "date": "2020-08-11",
+      "topics": "tress",
+      "entry": "noppee",
+      "moodId": 2,
+      "instructorId": 1,
+      "id": 67
+    },
+    {
+      "date": "2020-08-06",
+      "topics": "nah",
+      "entry": "shouldy",
+      "moodId": 1,
+      "instructorId": 2,
+      "id": 68
+    },
+    {
+      "date": "2020-08-20",
+      "topics": "ddd",
+      "entry": "nooo",
+      "moodId": 1,
+      "instructorId": 3,
+      "id": 69
+    },
+    {
+      "date": "2020-08-20",
+      "topics": "sadfsdf",
+      "entry": "mah",
+      "moodId": 4,
+      "instructorId": 1,
+      "id": 70
+    },
+    {
+      "date": "2020-08-19",
+      "topics": "UGH",
+      "entry": "is it json thing hm?",
+      "moodId": 2,
+      "instructorId": 1,
+      "id": 71
     }
   ],
   "moods": [
@@ -333,200 +157,29 @@
       "id": 14
     },
     {
-      "subject": "tomorrow",
-      "id": 18
-    },
-    {
-      "subject": "feel",
-      "id": 19
-    },
-    {
-      "subject": "like",
-      "id": 20
-    },
-    {
-      "subject": "makin",
-      "id": 21
-    },
-    {
-      "subject": "carp",
-      "id": 22
-    },
-    {
-      "subject": "saag",
-      "id": 26
-    },
-    {
-      "subject": "paneer",
-      "id": 27
-    },
-    {
-      "subject": "and",
-      "id": 28
-    },
-    {
-      "subject": "sotherthings",
-      "id": 29
-    },
-    {
-      "subject": "stuff",
-      "id": 30
-    },
-    {
-      "subject": "thingies",
-      "id": 31
-    },
-    {
-      "subject": "crap",
-      "id": 32
-    },
-    {
-      "subject": "crud",
-      "id": 33
-    },
-    {
-      "subject": "nah",
-      "id": 34
-    },
-    {
-      "subject": "still",
-      "id": 35
-    },
-    {
-      "subject": "brooding",
-      "id": 36
-    },
-    {
-      "subject": "rules",
-      "id": 37
-    },
-    {
-      "subject": "myworld",
-      "id": 38
-    },
-    {
-      "subject": "smut",
-      "id": 39
-    },
-    {
-      "subject": "crank",
-      "id": 40
-    },
-    {
-      "subject": "bookz",
-      "id": 41
-    },
-    {
-      "subject": "dorty",
-      "id": 42
-    },
-    {
-      "subject": "offocially",
-      "id": 43
-    },
-    {
-      "subject": "insane",
-      "id": 44
-    },
-    {
-      "subject": "offic",
-      "id": 45
-    },
-    {
-      "subject": "cray",
-      "id": 46
-    },
-    {
-      "subject": "newtag",
-      "id": 47
-    },
-    {
-      "subject": "newestandgrooved",
-      "id": 48
-    },
-    {
-      "subject": "neweriestt",
-      "id": 49
-    },
-    {
-      "subject": "trytobreakit",
-      "id": 50
-    },
-    {
-      "subject": "letsss",
-      "id": 51
-    },
-    {
-      "subject": "put",
-      "id": 52
-    },
-    {
-      "subject": "abunch",
-      "id": 53
-    },
-    {
-      "subject": "a",
-      "id": 54
-    },
-    {
-      "subject": "taggies",
-      "id": 55
-    },
-    {
-      "subject": "intehre",
-      "id": 56
-    },
-    {
-      "subject": "stillwaters",
-      "id": 57
-    },
-    {
-      "subject": "stillfresh",
-      "id": 58
-    },
-    {
-      "subject": "alwaysclean",
-      "id": 59
-    },
-    {
-      "subject": "anddang",
-      "id": 60
-    },
-    {
-      "subject": "mmm",
-      "id": 61
-    },
-    {
-      "subject": "reddss",
-      "id": 62
-    },
-    {
-      "subject": "arego",
-      "id": 63
-    },
-    {
-      "subject": "farrtyy",
-      "id": 64
-    },
-    {
-      "subject": "okaydaenn",
-      "id": 65
-    },
-    {
-      "subject": "danget",
-      "id": 66
-    },
-    {
-      "subject": "marchepas",
-      "id": 67
-    },
-    {
       "subject": "camarches",
       "id": 68
     },
     {
       "subject": "tresbien",
       "id": 69
+    }
+  ],
+  "entriesTags": [
+    {
+      "id": 1,
+      "entryId": 3,
+      "tagId": 14
+    },
+    {
+      "id": 2,
+      "entryId": 2,
+      "tagId": 14
+    },
+    {
+      "entryId": 71,
+      "tagId": 14,
+      "id": 3
     }
   ]
 }

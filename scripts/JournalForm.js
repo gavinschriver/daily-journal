@@ -7,6 +7,11 @@ import {
 import { getMoods, useMoods } from "./MoodsProvider.js";
 import { getInstructors, useInstructors } from "./InstructorsProvider.js";
 import { getTags, useTags, saveTag } from "./TagsProvider.js";
+import {
+  saveEntriesTags,
+  getEntriesTags,
+  useEntriesTags,
+} from "./EntriesTagsProvider.js";
 
 const contentTarget = document.querySelector(".journalFormContainer");
 const eventHub = document.querySelector(".mainContainer");
@@ -24,10 +29,13 @@ export const JournalForm = () => {
     .then(getMoods)
     .then(getTags)
     .then(getJournalEntries)
+    .then(getEntriesTags)
     .then(() => {
+      entriesTags = useEntriesTags();
       entries = useJournalEntries();
       tags = useTags();
       setSubjects();
+
       const currentInstructorArray = useInstructors();
       const currentMoodArray = useMoods();
       render(currentInstructorArray, currentMoodArray);
@@ -67,7 +75,10 @@ const createEntriesTags = () => {
       tagId: matchingTag.id,
     };
   });
-  console.log(newEntriesTags);
+  debugger;
+  newEntriesTags.forEach((entriesTagsObj) => {
+    saveEntriesTags(entriesTagsObj);
+  });
 };
 
 eventHub.addEventListener("tagStateChanged", () => {
