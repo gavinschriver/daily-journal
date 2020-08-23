@@ -255,6 +255,22 @@
       "moodId": 1,
       "instructorId": 1,
       "id": 60
+    },
+    {
+      "date": "2020-08-20",
+      "topics": "mhmm",
+      "entry": "test for NO new tags but YES new ETS for NEWWW entry",
+      "moodId": 2,
+      "instructorId": 1,
+      "id": 61
+    },
+    {
+      "date": "2020-08-19",
+      "topics": "moredart",
+      "entry": "merryst",
+      "moodId": 1,
+      "instructorId": 1,
+      "id": 62
     }
   ],
   "moods": [

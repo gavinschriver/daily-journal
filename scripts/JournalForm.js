@@ -11,6 +11,14 @@ import { getTags, useTags, saveTag } from "./TagsProvider.js";
 const contentTarget = document.querySelector(".journalFormContainer");
 const eventHub = document.querySelector(".mainContainer");
 
+//Component-level variables
+let entriesTags = [];
+let entries = [];
+let tags = [];
+let subjects = [];
+let arrayOfCurrentEntrySubjects = [];
+let matchingTagObjects = [];
+
 export const JournalForm = () => {
   getInstructors()
     .then(getMoods)
@@ -18,10 +26,6 @@ export const JournalForm = () => {
     .then(getJournalEntries)
     .then(() => {
       entries = useJournalEntries();
-      entries.sort((entryA, entryB) => {
-        return entryB.id - entryA.id;
-      });
-      console.log(entries);
       tags = useTags();
       setSubjects();
       const currentInstructorArray = useInstructors();
@@ -30,21 +34,36 @@ export const JournalForm = () => {
     });
 };
 
-//dum dum dummy subjects
-let entriesTags = [];
-let entries = [];
-let sortedEntries = entries.reverse();
-console.log(sortedEntries);
-let tags = [];
-let subjects = [];
-let arrayOfCurrentEntrySubjects = [];
-let matchingTagObjects = [];
+//functions to refresh the subjects array when tags gets refreshedd
+const resetFields = () => {
+  document.querySelector("#topicsCovered").value = "";
+  document.querySelector("#journalDate").value = "";
+  document.querySelector("#entryText").value = "";
+  document.querySelector("#moodSelect").value = "";
+  document.querySelector("#entryId").value = "";
+  document.querySelector("#instructorSelect").value = "";
+};
 
-//function to refresh the subjects array when tags gets refreshedd
 const setSubjects = () => {
   subjects = tags.map((tag) => {
     return tag.subject;
   });
+};
+
+const createEntriesTags = () => {
+  matchingTagObjects = arrayOfCurrentEntrySubjects.map((currentSubject) => {
+    return tags.find((tagObj) => {
+      return currentSubject === tagObj.subject;
+    });
+  });
+
+  const newEntriesTags = matchingTagObjects.map((matchingTag) => {
+    return {
+      entryId: entries[entries.length - 1].id,
+      tagId: matchingTag.id,
+    };
+  });
+  console.log(newEntriesTags);
 };
 
 eventHub.addEventListener("tagStateChanged", () => {
@@ -54,14 +73,12 @@ eventHub.addEventListener("tagStateChanged", () => {
       return currentSubject === tagObj.subject;
     });
   });
-  debugger;
   const newestEntriesTags = matchingTagObjects.map((matchingTag) => {
     return {
       entryId: entries[entries.length - 1].id,
       tagId: matchingTag.id,
     };
   });
-  console.log(newestEntriesTags);
   setSubjects();
 });
 
@@ -74,11 +91,8 @@ eventHub.addEventListener("journalStateChanged", () => {
       return !subjectSet.has(currentSubject);
     }
   );
-
-  //wrap this is in an IF to see IF there are new subjects to convert into tags
+  //if new tags are needed, save them - then jump into "tagStateEvent" callback to finish process of making new entrieTags
   if (newSubjectsArray.length > 0) {
-    //IF there ARE new subjects to convert into tags,  then we'll wait to run the function that finds and returns/sets matchingTagObjects until AFTER
-    //EVENT listener for tag creation/update happens
     const newTagObjects = newSubjectsArray.map((newSubject) => {
       return {
         subject: newSubject,
@@ -87,32 +101,13 @@ eventHub.addEventListener("journalStateChanged", () => {
     newTagObjects.forEach((tagObject) => {
       saveTag(tagObject);
     });
+    //if no new tags are needed, create entriesTags
   } else {
-    //if there ARENT any new tags to create, go ahead and, still within the immediate context of the click event, update matchingTagObjects
-    matchingTagObjects = arrayOfCurrentEntrySubjects.map((currentSubject) => {
-      return tags.find((tagObj) => {
-        return currentSubject === tagObj.subject;
-      });
-    });
-
-    const newEntriesTags = matchingTagObjects.map((matchingTag) => {
-      return {
-        entryId: entries[entries.length - 1].id,
-        tagId: matchingTag.id,
-      };
-    });
+    createEntriesTags();
   }
 
-  document.querySelector("#topicsCovered").value = "";
-  document.querySelector("#journalDate").value = "";
-  document.querySelector("#entryText").value = "";
-  document.querySelector("#moodSelect").value = "";
-  document.querySelector("#entryId").value = "";
-  document.querySelector("#instructorSelect").value = "";
+  resetFields();
 });
-
-//add el for if tag state changes so that tags can be RELOADDEDD FUCK now i gotta PARSE subjects so they can refresh the let subjects = []
-// SUBJECTS string
 
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "publishButton") {
@@ -120,13 +115,10 @@ eventHub.addEventListener("click", (clickEvent) => {
       document.querySelector("#moodSelect").value &&
       document.querySelector("#instructorSelect").value
     ) {
-      //lets look at some tags and save some tags!!!
       const currentEntrySubjectsString = document.querySelector("#tagInput")
         .value;
       arrayOfCurrentEntrySubjects = currentEntrySubjectsString.split(",");
-      // create a new Set based on the current (pre-"save-if-necessary")
 
-      // assign value of id to a var for the HELLOF IT jk to check and see if it exist already
       const id = document.querySelector("#entryId").value;
 
       if (id === "") {
