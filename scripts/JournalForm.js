@@ -75,7 +75,6 @@ const createEntriesTags = () => {
       tagId: matchingTag.id,
     };
   });
-  debugger;
   newEntriesTags.forEach((entriesTagsObj) => {
     saveEntriesTags(entriesTagsObj);
   });

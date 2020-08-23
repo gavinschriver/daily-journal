@@ -17,6 +17,14 @@ eventHub.addEventListener("click", (clickEvent) => {
       },
     });
     eventHub.dispatchEvent(editEntryButtonEvent);
+  } else if (clickEvent.target.id.startsWith("deleteEntry--")) {
+    const idToDelete = clickEvent.target.id.split("--")[1];
+    const deleteEntryButtonEvent = new CustomEvent("deleteButtonClicked", {
+      detail: {
+        deleteId: parseInt(idToDelete),
+      },
+    });
+    eventHub.dispatchEvent(deleteEntryButtonEvent);
   }
 });
 

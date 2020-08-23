@@ -42,3 +42,19 @@ export const updateEntry = (updatedEntryObj) => {
     .then(getJournalEntries)
     .then(dispatchStateChangeEvent);
 };
+
+eventHub.addEventListener("deleteButtonClicked", (deleteButtonEvent) => {
+  const deleteId = deleteButtonEvent.detail.deleteId;
+  deleteEntry(deleteId);
+});
+
+const deleteEntry = (deleteEntryId) => {
+  return fetch(`http://localhost:3001/entries/${deleteEntryId}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then(getJournalEntries)
+    .then(dispatchStateChangeEvent);
+};

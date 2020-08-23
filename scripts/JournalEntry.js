@@ -1,5 +1,5 @@
 export const JournalEntryCompontent = (entryObj) => {
-    return `
+  return `
         <article id="entry--${entryObj.id}" class="journalEntry">
             <h2>${entryObj.date}</h2>
             <section>Topics Covered: ${entryObj.topics}</section>
@@ -7,8 +7,7 @@ export const JournalEntryCompontent = (entryObj) => {
             <div>Instruktor:${entryObj.instructor.first_name}</div>
             <div>Mood: ${entryObj.mood.label}</div>
             <button id="editEntry--${entryObj.id}">Edit Entry</button>
+            <button id="deleteEntry--${entryObj.id}">BALEETE</button>
         </article>
-    `
-}
-
-
+    `;
+};
