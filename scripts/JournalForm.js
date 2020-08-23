@@ -11,9 +11,30 @@ import { getTags, useTags, saveTag } from "./TagsProvider.js";
 const contentTarget = document.querySelector(".journalFormContainer");
 const eventHub = document.querySelector(".mainContainer");
 
+export const JournalForm = () => {
+  getInstructors()
+    .then(getMoods)
+    .then(getTags)
+    .then(getJournalEntries)
+    .then(() => {
+      entries = useJournalEntries();
+      entries.sort((entryA, entryB) => {
+        return entryB.id - entryA.id;
+      });
+      console.log(entries);
+      tags = useTags();
+      setSubjects();
+      const currentInstructorArray = useInstructors();
+      const currentMoodArray = useMoods();
+      render(currentInstructorArray, currentMoodArray);
+    });
+};
+
 //dum dum dummy subjects
 let entriesTags = [];
 let entries = [];
+let sortedEntries = entries.reverse();
+console.log(sortedEntries);
 let tags = [];
 let subjects = [];
 let arrayOfCurrentEntrySubjects = [];
@@ -33,10 +54,10 @@ eventHub.addEventListener("tagStateChanged", () => {
       return currentSubject === tagObj.subject;
     });
   });
-  // console.log(matchingTagObjects);
+  debugger;
   const newestEntriesTags = matchingTagObjects.map((matchingTag) => {
     return {
-      entryId: entries[0].id,
+      entryId: entries[entries.length - 1].id,
       tagId: matchingTag.id,
     };
   });
@@ -76,7 +97,7 @@ eventHub.addEventListener("journalStateChanged", () => {
 
     const newEntriesTags = matchingTagObjects.map((matchingTag) => {
       return {
-        entryId: entries[0].id,
+        entryId: entries[entries.length - 1].id,
         tagId: matchingTag.id,
       };
     });
@@ -216,22 +237,4 @@ Tags</label>
     
     </article>
     `;
-};
-
-export const JournalForm = () => {
-  getInstructors()
-    .then(getMoods)
-    .then(getTags)
-    .then(getJournalEntries)
-    .then(() => {
-      entries = useJournalEntries();
-      entries.sort((entryA, entryB) => {
-        return entryB.id - entryA.id;
-      });
-      tags = useTags();
-      setSubjects();
-      const currentInstructorArray = useInstructors();
-      const currentMoodArray = useMoods();
-      render(currentInstructorArray, currentMoodArray);
-    });
 };
