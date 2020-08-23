@@ -34,7 +34,7 @@ export const JournalForm = () => {
     });
 };
 
-//functions to refresh the subjects array when tags gets refreshedd
+// reset entry fields when journal state changes
 const resetFields = () => {
   document.querySelector("#topicsCovered").value = "";
   document.querySelector("#journalDate").value = "";
@@ -44,12 +44,16 @@ const resetFields = () => {
   document.querySelector("#instructorSelect").value = "";
 };
 
+// reload array of 'subjects' strings extracted from API state tags
 const setSubjects = () => {
   subjects = tags.map((tag) => {
     return tag.subject;
   });
 };
 
+// create array of matching tag objects for all the individual 'subjects' in the current input field
+// then create new entriesTags objects by pairing each of those with the id of most recent entry
+// **ONLY WORKS for new entries right now**
 const createEntriesTags = () => {
   matchingTagObjects = arrayOfCurrentEntrySubjects.map((currentSubject) => {
     return tags.find((tagObj) => {
@@ -75,6 +79,7 @@ eventHub.addEventListener("tagStateChanged", () => {
 eventHub.addEventListener("journalStateChanged", () => {
   entries = useJournalEntries();
 
+  //create a set object with all the 'subjects' from component state tags collection
   const subjectSet = new Set(subjects);
   const newSubjectsArray = arrayOfCurrentEntrySubjects.filter(
     (currentSubject) => {
@@ -91,7 +96,7 @@ eventHub.addEventListener("journalStateChanged", () => {
     newTagObjects.forEach((tagObject) => {
       saveTag(tagObject);
     });
-    //if no new tags are needed, create entriesTags
+    //if no new tags are needed, create entriesTags here
   } else {
     createEntriesTags();
   }
@@ -101,16 +106,18 @@ eventHub.addEventListener("journalStateChanged", () => {
 
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "publishButton") {
+    //make sure dropdowns are valid so you don't eff my db
     if (
       document.querySelector("#moodSelect").value &&
       document.querySelector("#instructorSelect").value
     ) {
+      //look at tagInput field and use it to set an array of 'subject' strings, held at component state
       const currentEntrySubjectsString = document.querySelector("#tagInput")
         .value;
       arrayOfCurrentEntrySubjects = currentEntrySubjectsString.split(",");
 
       const id = document.querySelector("#entryId").value;
-
+      //if entry doesn't exist yet (not on DOM), create and save it
       if (id === "") {
         const newEntry = {
           date: document.querySelector("#journalDate").value,
