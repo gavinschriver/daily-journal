@@ -90,7 +90,7 @@ eventHub.addEventListener("tagStateChanged", () => {
   }
 });
 
-eventHub.addEventListener("journalStateChanged", () => {
+eventHub.addEventListener("journalEntrySaved", () => {
   entries = useJournalEntries();
 
   //create a set object with all the 'subjects' from component state tags collection
@@ -155,6 +155,8 @@ eventHub.addEventListener("click", (clickEvent) => {
             document.querySelector("#instructorSelect").value
           ),
         };
+        //provider needs to broadcast an "entryUpdated event..." and we have a separate listener...
+        //OR, should it broadcast same message "journalEntrySaved" and follow same path with listener?
         updateEntry(updatedEntry);
       }
     } else alert("yougonnafuckit!!");

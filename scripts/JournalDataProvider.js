@@ -1,9 +1,5 @@
 const eventHub = document.querySelector(".mainContainer");
 
-const dispatchStateChangeEvent = () => {
-  eventHub.dispatchEvent(new CustomEvent("journalStateChanged"));
-};
-
 let journalEntries = [];
 
 export const useJournalEntries = () => {
@@ -28,7 +24,9 @@ export const saveEntry = (entryObj) => {
     body: JSON.stringify(entryObj),
   })
     .then(getJournalEntries)
-    .then(dispatchStateChangeEvent);
+    .then(() => {
+      eventHub.dispatchEvent(new CustomEvent("journalEntrySaved"));
+    });
 };
 
 export const updateEntry = (updatedEntryObj) => {
