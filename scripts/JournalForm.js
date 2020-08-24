@@ -82,9 +82,7 @@ const createEntriesTags = () => {
 
 eventHub.addEventListener("tagStateChanged", () => {
   tags = useTags();
-  debugger;
   newTagCounter--;
-  debugger;
   setSubjects();
   if (newTagCounter <= 0) {
     createEntriesTags();

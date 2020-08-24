@@ -207,6 +207,30 @@
       "moodId": 1,
       "instructorId": 1,
       "id": 90
+    },
+    {
+      "date": "2020-08-12",
+      "topics": "one last dangoll test",
+      "entry": "wow. might have fixed it?",
+      "moodId": 1,
+      "instructorId": 2,
+      "id": 91
+    },
+    {
+      "date": "2020-08-23",
+      "topics": "please",
+      "entry": "idontkneeedeit",
+      "moodId": 3,
+      "instructorId": 3,
+      "id": 92
+    },
+    {
+      "date": "2020-08-14",
+      "topics": "okayoneeemoretest",
+      "entry": "just one more?",
+      "moodId": 2,
+      "instructorId": 1,
+      "id": 93
     }
   ],
   "moods": [
@@ -507,6 +531,34 @@
     {
       "subject": "blargh",
       "id": 131
+    },
+    {
+      "subject": "dunnoo",
+      "id": 132
+    },
+    {
+      "subject": "buttt",
+      "id": 133
+    },
+    {
+      "subject": "idoknow",
+      "id": 134
+    },
+    {
+      "subject": "noooo",
+      "id": 135
+    },
+    {
+      "subject": "pleaseestop",
+      "id": 136
+    },
+    {
+      "subject": "debugging",
+      "id": 137
+    },
+    {
+      "subject": "andtugging",
+      "id": 138
     }
   ],
   "entriesTags": [
@@ -1129,6 +1181,41 @@
       "entryId": 90,
       "tagId": 131,
       "id": 130
+    },
+    {
+      "entryId": 92,
+      "tagId": 135,
+      "id": 131
+    },
+    {
+      "entryId": 92,
+      "tagId": 136,
+      "id": 132
+    },
+    {
+      "entryId": 92,
+      "tagId": 137,
+      "id": 133
+    },
+    {
+      "entryId": 93,
+      "tagId": 135,
+      "id": 134
+    },
+    {
+      "entryId": 93,
+      "tagId": 136,
+      "id": 135
+    },
+    {
+      "entryId": 93,
+      "tagId": 137,
+      "id": 136
+    },
+    {
+      "entryId": 93,
+      "tagId": 138,
+      "id": 137
     }
   ]
 }
