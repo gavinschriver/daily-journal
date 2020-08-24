@@ -85,6 +85,7 @@ const createEntriesTags = () => {
       };
     }
   });
+  // end conditional check to distinguish bw new and updating entries
   newEntriesTags.forEach((entriesTagsObj) => {
     saveEntriesTags(entriesTagsObj);
   });
@@ -233,6 +234,7 @@ eventHub.addEventListener("editButtonClicked", (editButtonEvent) => {
   document.querySelector("#entryId").value = matchingEntryObj.id;
   document.querySelector("#tagInput").value = stringOfMatchingSubjects;
   console.log(stringOfMatchingSubjects);
+  console.log(editId);
 });
 
 const render = (instructorArray, moodsArray) => {
