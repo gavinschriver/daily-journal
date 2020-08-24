@@ -83,7 +83,6 @@ const createEntriesTags = () => {
       saveEntriesTags(entriesTagsObj);
     });
   } else {
-    alert(`an edithing thing happened for ${editId}`);
     matchingTagObjects = arrayOfCurrentEntrySubjects.map((currentSubject) => {
       return tags.find((tagObj) => {
         return currentSubject === tagObj.subject;
