@@ -71,11 +71,19 @@ const createEntriesTags = () => {
       return currentSubject === tagObj.subject;
     });
   });
+
   const newEntriesTags = matchingTagObjects.map((matchingTag) => {
-    return {
-      entryId: entries[entries.length - 1].id,
-      tagId: matchingTag.id,
-    };
+    if (editId === "") {
+      return {
+        entryId: entries[entries.length - 1].id,
+        tagId: matchingTag.id,
+      };
+    } else {
+      return {
+        entryId: editId,
+        tagId: matchingTag.id,
+      };
+    }
   });
   newEntriesTags.forEach((entriesTagsObj) => {
     saveEntriesTags(entriesTagsObj);
@@ -122,14 +130,15 @@ eventHub.addEventListener("journalEntrySaved", () => {
 
 eventHub.addEventListener("journalEntryUpdated", () => {
   entries = useJournalEntries();
-  //create a set object with all the 'subjects' from component state tags collection
-
+  // create set with all the 'subjects' from component state tags collection
   const subjectSet = new Set(subjects);
+  // create an array of any 'subjects' from the current entry field values that don't exist in tags already
   const newSubjectsArray = arrayOfCurrentEntrySubjects.filter(
     (currentSubject) => {
       return !subjectSet.has(currentSubject);
     }
   );
+  //if new tags are needed, save them - then jump into "tagStateEvent" callback to finish process of making new entriesTags
 
   if (newSubjectsArray.length > 0) {
     newTagCounter = newSubjectsArray.length;
@@ -163,6 +172,7 @@ eventHub.addEventListener("click", (clickEvent) => {
       const id = document.querySelector("#entryId").value;
       //if entry doesn't exist yet (not on DOM), create and save it
       if (id === "") {
+        editId = "";
         const newEntry = {
           date: document.querySelector("#journalDate").value,
           topics: document.querySelector("#topicsCovered").value,
@@ -214,7 +224,6 @@ eventHub.addEventListener("editButtonClicked", (editButtonEvent) => {
     return matchingTagObj.subject;
   });
   const stringOfMatchingSubjects = arrayOfMatchingSubjects.join();
-  debugger;
 
   //Fill out Entry Form fields with matching values from that entry
   document.querySelector("#topicsCovered").value = matchingEntryObj.topics;
@@ -223,6 +232,7 @@ eventHub.addEventListener("editButtonClicked", (editButtonEvent) => {
   document.querySelector("#moodSelect").value = matchingEntryObj.moodId;
   document.querySelector("#entryId").value = matchingEntryObj.id;
   document.querySelector("#tagInput").value = stringOfMatchingSubjects;
+  console.log(stringOfMatchingSubjects);
 });
 
 const render = (instructorArray, moodsArray) => {

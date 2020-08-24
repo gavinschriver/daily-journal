@@ -25,14 +25,6 @@
       "id": 70
     },
     {
-      "date": "2020-08-19",
-      "topics": "LEEL",
-      "entry": "multiple NEW tags here...",
-      "moodId": 4,
-      "instructorId": 3,
-      "id": 71
-    },
-    {
       "date": "2020-08-23",
       "topics": "just",
       "entry": "some carp aka 1 old tag",
@@ -47,30 +39,6 @@
       "moodId": 1,
       "instructorId": 3,
       "id": 73
-    },
-    {
-      "date": "2020-08-23",
-      "topics": "Somemaaf",
-      "entry": "DATAZZZ",
-      "moodId": 2,
-      "instructorId": 3,
-      "id": 74
-    },
-    {
-      "date": "2020-08-19",
-      "topics": "dopeness",
-      "entry": "testing is like WEEE",
-      "moodId": 1,
-      "instructorId": 1,
-      "id": 75
-    },
-    {
-      "date": "2020-08-13",
-      "topics": "Somemmerrr",
-      "entry": "trying 1 old, 2 new",
-      "moodId": 1,
-      "instructorId": 1,
-      "id": 76
     },
     {
       "date": "2020-07-30",
@@ -97,44 +65,12 @@
       "id": 81
     },
     {
-      "date": "2020-08-14",
-      "topics": "Somessaa",
-      "entry": "stufffhh",
-      "moodId": 1,
-      "instructorId": 1,
-      "id": 82
-    },
-    {
       "date": "2020-08-20",
       "topics": "brw",
       "entry": "look for tag counter value",
       "moodId": 3,
       "instructorId": 1,
       "id": 85
-    },
-    {
-      "date": "2020-08-12",
-      "topics": "Some shit",
-      "entry": "morestugg",
-      "moodId": 1,
-      "instructorId": 1,
-      "id": 90
-    },
-    {
-      "id": 92,
-      "date": "2020-08-23",
-      "topics": "please",
-      "entry": "idontkneeedeit",
-      "moodId": 3,
-      "instructorId": 1
-    },
-    {
-      "date": "2020-08-19",
-      "topics": "nite",
-      "entry": "timeforbed",
-      "moodId": 3,
-      "instructorId": 3,
-      "id": 94
     }
   ],
   "moods": [
@@ -471,6 +407,18 @@
     {
       "subject": "",
       "id": 140
+    },
+    {
+      "subject": "ahhh",
+      "id": 141
+    },
+    {
+      "subject": "stillworks?",
+      "id": 142
+    },
+    {
+      "subject": "FARKK",
+      "id": 143
     }
   ],
   "entriesTags": [
@@ -500,26 +448,6 @@
       "id": 36
     },
     {
-      "entryId": 71,
-      "tagId": 96,
-      "id": 37
-    },
-    {
-      "entryId": 71,
-      "tagId": 97,
-      "id": 38
-    },
-    {
-      "entryId": 71,
-      "tagId": 96,
-      "id": 39
-    },
-    {
-      "entryId": 71,
-      "tagId": 97,
-      "id": 40
-    },
-    {
       "entryId": 72,
       "tagId": 94,
       "id": 41
@@ -533,61 +461,6 @@
       "entryId": 73,
       "tagId": 97,
       "id": 43
-    },
-    {
-      "entryId": 74,
-      "tagId": 94,
-      "id": 44
-    },
-    {
-      "entryId": 74,
-      "tagId": 98,
-      "id": 45
-    },
-    {
-      "entryId": 75,
-      "tagId": 94,
-      "id": 46
-    },
-    {
-      "entryId": 75,
-      "tagId": 98,
-      "id": 47
-    },
-    {
-      "entryId": 75,
-      "tagId": 99,
-      "id": 48
-    },
-    {
-      "entryId": 76,
-      "tagId": 94,
-      "id": 49
-    },
-    {
-      "entryId": 76,
-      "tagId": 100,
-      "id": 50
-    },
-    {
-      "entryId": 76,
-      "tagId": 101,
-      "id": 51
-    },
-    {
-      "entryId": 76,
-      "tagId": 94,
-      "id": 52
-    },
-    {
-      "entryId": 76,
-      "tagId": 100,
-      "id": 53
-    },
-    {
-      "entryId": 76,
-      "tagId": 101,
-      "id": 54
     },
     {
       "entryId": 78,
@@ -638,46 +511,6 @@
       "entryId": 81,
       "tagId": 115,
       "id": 105
-    },
-    {
-      "entryId": 82,
-      "tagId": 116,
-      "id": 106
-    },
-    {
-      "entryId": 90,
-      "tagId": 130,
-      "id": 129
-    },
-    {
-      "entryId": 90,
-      "tagId": 131,
-      "id": 130
-    },
-    {
-      "entryId": 92,
-      "tagId": 135,
-      "id": 131
-    },
-    {
-      "entryId": 92,
-      "tagId": 136,
-      "id": 132
-    },
-    {
-      "entryId": 92,
-      "tagId": 137,
-      "id": 133
-    },
-    {
-      "entryId": 94,
-      "tagId": 139,
-      "id": 138
-    },
-    {
-      "entryId": 94,
-      "tagId": 140,
-      "id": 139
     }
   ]
 }
