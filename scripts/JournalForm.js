@@ -24,6 +24,7 @@ let subjects = [];
 let arrayOfCurrentEntrySubjects = [];
 let matchingTagObjects = [];
 let newTagCounter;
+let editId;
 
 export const JournalForm = () => {
   getInstructors()
@@ -165,15 +166,35 @@ eventHub.addEventListener("click", (clickEvent) => {
 
 eventHub.addEventListener("editButtonClicked", (editButtonEvent) => {
   const idToFind = editButtonEvent.detail.editEntryId;
+  editId = idToFind;
   const entriesArray = useJournalEntries();
   const matchingEntryObj = entriesArray.find((entryObj) => {
     return entryObj.id === idToFind;
   });
+
+  const matchingEntriesTags = entriesTags.filter((ETObj) => {
+    return matchingEntryObj.id === ETObj.entryId;
+  });
+
+  const matchingTags = matchingEntriesTags.map((matchingETObj) => {
+    return tags.find((tagObj) => {
+      return matchingETObj.tagId === tagObj.id;
+    });
+  });
+
+  const arrayOfMatchingSubjects = matchingTags.map((matchingTagObj) => {
+    return matchingTagObj.subject;
+  });
+  const stringOfMatchingSubjects = arrayOfMatchingSubjects.join();
+  debugger;
+
+  //Fill out Entry Form fields with matching values from that entry
   document.querySelector("#topicsCovered").value = matchingEntryObj.topics;
   document.querySelector("#journalDate").value = matchingEntryObj.date;
   document.querySelector("#entryText").value = matchingEntryObj.entry;
   document.querySelector("#moodSelect").value = matchingEntryObj.moodId;
   document.querySelector("#entryId").value = matchingEntryObj.id;
+  document.querySelector("#tagInput").value = stringOfMatchingSubjects;
 });
 
 const render = (instructorArray, moodsArray) => {

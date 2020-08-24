@@ -29,6 +29,10 @@ export const saveEntry = (entryObj) => {
     });
 };
 
+//umm non operational RN... like... trying to figure out still if
+//we need 2 "dispatchStateChangeEvents"... or 1? or 3?
+//Does there need to be/should there be separate flow for if you SAVE versus
+//UPDATE versus DELETE?
 export const updateEntry = (updatedEntryObj) => {
   return fetch(`http://localhost:3001/entries/${updatedEntryObj.id}`, {
     method: "PUT",
@@ -38,7 +42,9 @@ export const updateEntry = (updatedEntryObj) => {
     body: JSON.stringify(updatedEntryObj),
   })
     .then(getJournalEntries)
-    .then(dispatchStateChangeEvent);
+    .then(() => {
+      eventHub.dispatchEvent(new CustomEvent("journalEntrySaved"));
+    });
 };
 
 eventHub.addEventListener("deleteButtonClicked", (deleteButtonEvent) => {

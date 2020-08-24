@@ -24,14 +24,6 @@ export const EntryListComponent = () => {
     });
 };
 
-eventHub.addEventListener("entriesTagsStateChanged", () => {
-  entries = useJournalEntries();
-  tags = useTags();
-  entriesTags = useEntriesTags();
-
-  render();
-});
-
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id.startsWith("editEntry--")) {
     const [prefix, entryIdFromHTML] = clickEvent.target.id.split("--");
@@ -50,6 +42,14 @@ eventHub.addEventListener("click", (clickEvent) => {
     });
     eventHub.dispatchEvent(deleteEntryButtonEvent);
   }
+});
+
+eventHub.addEventListener("entriesTagsStateChanged", () => {
+  entries = useJournalEntries();
+  tags = useTags();
+  entriesTags = useEntriesTags();
+
+  render();
 });
 
 eventHub.addEventListener("entryDeleted", () => {
