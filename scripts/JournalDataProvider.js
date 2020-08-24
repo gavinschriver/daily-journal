@@ -4,10 +4,6 @@ const dispatchStateChangeEvent = () => {
   eventHub.dispatchEvent(new CustomEvent("journalStateChanged"));
 };
 
-const dispatchEntryDeletedEvent = () => {
-  eventHub.dispatchEvent(new CustomEvent("entryDeleted"));
-};
-
 let journalEntries = [];
 
 export const useJournalEntries = () => {
@@ -60,5 +56,7 @@ const deleteEntry = (deleteEntryId) => {
     },
   })
     .then(getJournalEntries)
-    .then(dispatchEntryDeletedEvent);
+    .then(() => {
+      eventHub.dispatchEvent(new CustomEvent("entryDeleted"));
+    });
 };

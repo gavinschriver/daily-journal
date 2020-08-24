@@ -2,35 +2,11 @@
   "entries": [
     {
       "date": "2020-08-23",
-      "topics": "abg",
-      "entry": "barge",
-      "moodId": 1,
-      "instructorId": 2,
-      "id": 65
-    },
-    {
-      "date": "2020-08-23",
-      "topics": "bro NOICE",
-      "entry": "dude SWEET",
-      "moodId": 3,
-      "instructorId": 3,
-      "id": 66
-    },
-    {
-      "date": "2020-08-23",
       "topics": "leeel",
       "entry": "buggy",
       "moodId": 1,
       "instructorId": 2,
       "id": 67
-    },
-    {
-      "date": "2020-08-23",
-      "topics": "durd",
-      "entry": "nowayy!",
-      "moodId": 4,
-      "instructorId": 1,
-      "id": 68
     },
     {
       "date": "2020-08-23",
@@ -97,28 +73,12 @@
       "id": 76
     },
     {
-      "date": "2020-08-20",
-      "topics": "just 2x right?",
-      "entry": "yeyeahh",
-      "moodId": 3,
-      "instructorId": 1,
-      "id": 77
-    },
-    {
       "date": "2020-07-30",
       "topics": "Some shit",
       "entry": "just a dubblee",
       "moodId": 4,
       "instructorId": 1,
       "id": 78
-    },
-    {
-      "date": "2020-08-12",
-      "topics": "MASSIVE TAG LIST INCOMING",
-      "entry": "SPAM SPAM BACONAND SAMMM",
-      "moodId": 1,
-      "instructorId": 1,
-      "id": 79
     },
     {
       "date": "2020-08-26",
@@ -145,22 +105,6 @@
       "id": 82
     },
     {
-      "date": "2020-08-12",
-      "topics": "doubleee",
-      "entry": "double up. 2 new guys. will prolyl see 4.",
-      "moodId": 4,
-      "instructorId": 2,
-      "id": 83
-    },
-    {
-      "date": "2020-08-17",
-      "topics": "gonna",
-      "entry": "trywith 2. should see 4. please?",
-      "moodId": 1,
-      "instructorId": 3,
-      "id": 84
-    },
-    {
       "date": "2020-08-20",
       "topics": "brw",
       "entry": "look for tag counter value",
@@ -177,44 +121,12 @@
       "id": 86
     },
     {
-      "date": "2020-08-28",
-      "topics": "PLEASE LORD",
-      "entry": "dont make me step through all that shit again",
-      "moodId": 4,
-      "instructorId": 1,
-      "id": 87
-    },
-    {
-      "date": "2020-08-13",
-      "topics": "twice",
-      "entry": "is nice",
-      "moodId": 4,
-      "instructorId": 3,
-      "id": 88
-    },
-    {
-      "date": "2020-08-12",
-      "topics": "Switch",
-      "entry": "whyonlythose",
-      "moodId": 1,
-      "instructorId": 3,
-      "id": 89
-    },
-    {
       "date": "2020-08-12",
       "topics": "Some shit",
       "entry": "morestugg",
       "moodId": 1,
       "instructorId": 1,
       "id": 90
-    },
-    {
-      "date": "2020-08-12",
-      "topics": "one last dangoll test",
-      "entry": "wow. might have fixed it?",
-      "moodId": 1,
-      "instructorId": 2,
-      "id": 91
     },
     {
       "date": "2020-08-23",
@@ -563,51 +475,6 @@
   ],
   "entriesTags": [
     {
-      "entryId": 65,
-      "tagId": 84,
-      "id": 7
-    },
-    {
-      "entryId": 65,
-      "tagId": 70,
-      "id": 8
-    },
-    {
-      "entryId": 65,
-      "tagId": 70,
-      "id": 9
-    },
-    {
-      "entryId": 66,
-      "tagId": 88,
-      "id": 10
-    },
-    {
-      "entryId": 66,
-      "tagId": 89,
-      "id": 11
-    },
-    {
-      "entryId": 66,
-      "tagId": 84,
-      "id": 12
-    },
-    {
-      "entryId": 66,
-      "tagId": 88,
-      "id": 13
-    },
-    {
-      "entryId": 66,
-      "tagId": 89,
-      "id": 14
-    },
-    {
-      "entryId": 66,
-      "tagId": 84,
-      "id": 15
-    },
-    {
       "entryId": 67,
       "tagId": 90,
       "id": 16
@@ -621,86 +488,6 @@
       "entryId": 67,
       "tagId": 84,
       "id": 18
-    },
-    {
-      "entryId": 68,
-      "tagId": 91,
-      "id": 19
-    },
-    {
-      "entryId": 68,
-      "tagId": 92,
-      "id": 20
-    },
-    {
-      "entryId": 68,
-      "tagId": 93,
-      "id": 21
-    },
-    {
-      "entryId": 68,
-      "tagId": 94,
-      "id": 22
-    },
-    {
-      "entryId": 68,
-      "tagId": 91,
-      "id": 23
-    },
-    {
-      "entryId": 68,
-      "tagId": 92,
-      "id": 24
-    },
-    {
-      "entryId": 68,
-      "tagId": 93,
-      "id": 25
-    },
-    {
-      "entryId": 68,
-      "tagId": 94,
-      "id": 26
-    },
-    {
-      "entryId": 68,
-      "tagId": 91,
-      "id": 27
-    },
-    {
-      "entryId": 68,
-      "tagId": 92,
-      "id": 28
-    },
-    {
-      "entryId": 68,
-      "tagId": 93,
-      "id": 29
-    },
-    {
-      "entryId": 68,
-      "tagId": 94,
-      "id": 30
-    },
-    {
-      "entryId": 68,
-      "tagId": 91,
-      "id": 31
-    },
-    {
-      "entryId": 68,
-      "tagId": 92,
-      "id": 32
-    },
-    {
-      "entryId": 68,
-      "tagId": 93,
-      "id": 33
-    },
-    {
-      "entryId": 68,
-      "tagId": 94,
-      "id": 34
     },
     {
       "entryId": 69,
@@ -803,86 +590,6 @@
       "id": 54
     },
     {
-      "entryId": 77,
-      "tagId": 102,
-      "id": 55
-    },
-    {
-      "entryId": 77,
-      "tagId": 103,
-      "id": 56
-    },
-    {
-      "entryId": 77,
-      "tagId": 104,
-      "id": 57
-    },
-    {
-      "entryId": 77,
-      "tagId": 105,
-      "id": 58
-    },
-    {
-      "entryId": 77,
-      "tagId": 102,
-      "id": 59
-    },
-    {
-      "entryId": 77,
-      "tagId": 103,
-      "id": 60
-    },
-    {
-      "entryId": 77,
-      "tagId": 104,
-      "id": 61
-    },
-    {
-      "entryId": 77,
-      "tagId": 105,
-      "id": 62
-    },
-    {
-      "entryId": 77,
-      "tagId": 102,
-      "id": 63
-    },
-    {
-      "entryId": 77,
-      "tagId": 103,
-      "id": 64
-    },
-    {
-      "entryId": 77,
-      "tagId": 104,
-      "id": 65
-    },
-    {
-      "entryId": 77,
-      "tagId": 105,
-      "id": 66
-    },
-    {
-      "entryId": 77,
-      "tagId": 102,
-      "id": 67
-    },
-    {
-      "entryId": 77,
-      "tagId": 103,
-      "id": 68
-    },
-    {
-      "entryId": 77,
-      "tagId": 104,
-      "id": 69
-    },
-    {
-      "entryId": 77,
-      "tagId": 105,
-      "id": 70
-    },
-    {
       "entryId": 78,
       "tagId": 106,
       "id": 71
@@ -901,131 +608,6 @@
       "entryId": 78,
       "tagId": 107,
       "id": 74
-    },
-    {
-      "entryId": 79,
-      "tagId": 108,
-      "id": 75
-    },
-    {
-      "entryId": 79,
-      "tagId": 109,
-      "id": 76
-    },
-    {
-      "entryId": 79,
-      "tagId": 110,
-      "id": 77
-    },
-    {
-      "entryId": 79,
-      "tagId": 111,
-      "id": 78
-    },
-    {
-      "entryId": 79,
-      "tagId": 112,
-      "id": 79
-    },
-    {
-      "entryId": 79,
-      "tagId": 108,
-      "id": 80
-    },
-    {
-      "entryId": 79,
-      "tagId": 109,
-      "id": 81
-    },
-    {
-      "entryId": 79,
-      "tagId": 110,
-      "id": 82
-    },
-    {
-      "entryId": 79,
-      "tagId": 111,
-      "id": 83
-    },
-    {
-      "entryId": 79,
-      "tagId": 112,
-      "id": 84
-    },
-    {
-      "entryId": 79,
-      "tagId": 108,
-      "id": 85
-    },
-    {
-      "entryId": 79,
-      "tagId": 109,
-      "id": 86
-    },
-    {
-      "entryId": 79,
-      "tagId": 110,
-      "id": 87
-    },
-    {
-      "entryId": 79,
-      "tagId": 111,
-      "id": 88
-    },
-    {
-      "entryId": 79,
-      "tagId": 112,
-      "id": 89
-    },
-    {
-      "entryId": 79,
-      "tagId": 108,
-      "id": 90
-    },
-    {
-      "entryId": 79,
-      "tagId": 109,
-      "id": 91
-    },
-    {
-      "entryId": 79,
-      "tagId": 110,
-      "id": 92
-    },
-    {
-      "entryId": 79,
-      "tagId": 111,
-      "id": 93
-    },
-    {
-      "entryId": 79,
-      "tagId": 112,
-      "id": 94
-    },
-    {
-      "entryId": 79,
-      "tagId": 108,
-      "id": 95
-    },
-    {
-      "entryId": 79,
-      "tagId": 109,
-      "id": 96
-    },
-    {
-      "entryId": 79,
-      "tagId": 110,
-      "id": 97
-    },
-    {
-      "entryId": 79,
-      "tagId": 111,
-      "id": 98
-    },
-    {
-      "entryId": 79,
-      "tagId": 112,
-      "id": 99
     },
     {
       "entryId": 80,
@@ -1063,46 +645,6 @@
       "id": 106
     },
     {
-      "entryId": 83,
-      "tagId": 117,
-      "id": 107
-    },
-    {
-      "entryId": 83,
-      "tagId": 118,
-      "id": 108
-    },
-    {
-      "entryId": 83,
-      "tagId": 117,
-      "id": 109
-    },
-    {
-      "entryId": 83,
-      "tagId": 118,
-      "id": 110
-    },
-    {
-      "entryId": 84,
-      "tagId": 119,
-      "id": 111
-    },
-    {
-      "entryId": 84,
-      "tagId": 120,
-      "id": 112
-    },
-    {
-      "entryId": 84,
-      "tagId": 119,
-      "id": 113
-    },
-    {
-      "entryId": 84,
-      "tagId": 120,
-      "id": 114
-    },
-    {
       "entryId": 86,
       "tagId": 122,
       "id": 115
@@ -1121,56 +663,6 @@
       "entryId": 86,
       "tagId": 123,
       "id": 118
-    },
-    {
-      "entryId": 87,
-      "tagId": 124,
-      "id": 119
-    },
-    {
-      "entryId": 87,
-      "tagId": 125,
-      "id": 120
-    },
-    {
-      "entryId": 88,
-      "tagId": 126,
-      "id": 121
-    },
-    {
-      "entryId": 88,
-      "tagId": 127,
-      "id": 122
-    },
-    {
-      "entryId": 88,
-      "tagId": 126,
-      "id": 123
-    },
-    {
-      "entryId": 88,
-      "tagId": 127,
-      "id": 124
-    },
-    {
-      "entryId": 89,
-      "tagId": 128,
-      "id": 125
-    },
-    {
-      "entryId": 89,
-      "tagId": 129,
-      "id": 126
-    },
-    {
-      "entryId": 89,
-      "tagId": 128,
-      "id": 127
-    },
-    {
-      "entryId": 89,
-      "tagId": 129,
-      "id": 128
     },
     {
       "entryId": 90,
