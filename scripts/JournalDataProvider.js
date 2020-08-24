@@ -43,7 +43,7 @@ export const updateEntry = (updatedEntryObj) => {
   })
     .then(getJournalEntries)
     .then(() => {
-      eventHub.dispatchEvent(new CustomEvent("journalEntrySaved"));
+      eventHub.dispatchEvent(new CustomEvent("journalEntryUpdated"));
     });
 };
 

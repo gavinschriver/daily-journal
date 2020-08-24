@@ -113,14 +113,6 @@
       "id": 85
     },
     {
-      "date": "2020-08-22",
-      "topics": "negff",
-      "entry": "gone",
-      "moodId": 1,
-      "instructorId": 2,
-      "id": 86
-    },
-    {
       "date": "2020-08-12",
       "topics": "Some shit",
       "entry": "morestugg",
@@ -651,26 +643,6 @@
       "entryId": 82,
       "tagId": 116,
       "id": 106
-    },
-    {
-      "entryId": 86,
-      "tagId": 122,
-      "id": 115
-    },
-    {
-      "entryId": 86,
-      "tagId": 123,
-      "id": 116
-    },
-    {
-      "entryId": 86,
-      "tagId": 122,
-      "id": 117
-    },
-    {
-      "entryId": 86,
-      "tagId": 123,
-      "id": 118
     },
     {
       "entryId": 90,

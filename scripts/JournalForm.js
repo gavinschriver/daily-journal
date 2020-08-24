@@ -120,6 +120,34 @@ eventHub.addEventListener("journalEntrySaved", () => {
   resetFields();
 });
 
+eventHub.addEventListener("journalEntryUpdated", () => {
+  entries = useJournalEntries();
+  //create a set object with all the 'subjects' from component state tags collection
+
+  const subjectSet = new Set(subjects);
+  const newSubjectsArray = arrayOfCurrentEntrySubjects.filter(
+    (currentSubject) => {
+      return !subjectSet.has(currentSubject);
+    }
+  );
+
+  if (newSubjectsArray.length > 0) {
+    newTagCounter = newSubjectsArray.length;
+    const newTagObjects = newSubjectsArray.map((newSubject) => {
+      return {
+        subject: newSubject,
+      };
+    });
+    newTagObjects.forEach((tagObject) => {
+      saveTag(tagObject);
+    });
+  } else {
+    createEntriesTags();
+  }
+
+  resetFields();
+});
+
 eventHub.addEventListener("click", (clickEvent) => {
   if (clickEvent.target.id === "publishButton") {
     //make sure dropdowns are valid so you don't eff my db
