@@ -86,7 +86,9 @@ eventHub.addEventListener("tagStateChanged", () => {
   newTagCounter--;
   debugger;
   setSubjects();
-  createEntriesTags();
+  if (newTagCounter <= 0) {
+    createEntriesTags();
+  }
 });
 
 eventHub.addEventListener("journalStateChanged", () => {

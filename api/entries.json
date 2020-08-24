@@ -199,6 +199,14 @@
       "moodId": 1,
       "instructorId": 3,
       "id": 89
+    },
+    {
+      "date": "2020-08-12",
+      "topics": "Some shit",
+      "entry": "morestugg",
+      "moodId": 1,
+      "instructorId": 1,
+      "id": 90
     }
   ],
   "moods": [
@@ -491,6 +499,14 @@
     {
       "subject": "thosegus",
       "id": 129
+    },
+    {
+      "subject": "bleh",
+      "id": 130
+    },
+    {
+      "subject": "blargh",
+      "id": 131
     }
   ],
   "entriesTags": [
@@ -1103,6 +1119,16 @@
       "entryId": 89,
       "tagId": 129,
       "id": 128
+    },
+    {
+      "entryId": 90,
+      "tagId": 130,
+      "id": 129
+    },
+    {
+      "entryId": 90,
+      "tagId": 131,
+      "id": 130
     }
   ]
 }
