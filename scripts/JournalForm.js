@@ -68,7 +68,7 @@ const createEntriesTags = () => {
       return currentSubject === tagObj.subject;
     });
   });
-
+  debugger;
   const newEntriesTags = matchingTagObjects.map((matchingTag) => {
     return {
       entryId: entries[entries.length - 1].id,
