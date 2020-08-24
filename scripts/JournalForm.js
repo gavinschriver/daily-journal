@@ -66,31 +66,32 @@ const setSubjects = () => {
 // then create new entriesTags objects by pairing each of those with the id of most recent entry
 // **ONLY WORKS for new entries right now**
 const createEntriesTags = () => {
-  matchingTagObjects = arrayOfCurrentEntrySubjects.map((currentSubject) => {
-    return tags.find((tagObj) => {
-      return currentSubject === tagObj.subject;
+  if (editId === "") {
+    matchingTagObjects = arrayOfCurrentEntrySubjects.map((currentSubject) => {
+      return tags.find((tagObj) => {
+        return currentSubject === tagObj.subject;
+      });
     });
-  });
 
-  const newEntriesTags = matchingTagObjects.map((matchingTag) => {
-    if (editId === "") {
+    const newEntriesTags = matchingTagObjects.map((matchingTag) => {
       return {
         entryId: entries[entries.length - 1].id,
         tagId: matchingTag.id,
       };
-    } else {
-      return {
-        entryId: editId,
-        tagId: matchingTag.id,
-      };
-    }
-  });
-  // end conditional check to distinguish bw new and updating entries
-  newEntriesTags.forEach((entriesTagsObj) => {
-    saveEntriesTags(entriesTagsObj);
-  });
+    });
+    newEntriesTags.forEach((entriesTagsObj) => {
+      saveEntriesTags(entriesTagsObj);
+    });
+  } // else  for editId being a thing starts here;
 };
 
+/* 
+return {
+      entryId: editId,
+      tagId: matchingTag.id,
+    };
+*/
+// end conditional check to distinguish bw new and updating entries
 eventHub.addEventListener("tagStateChanged", () => {
   tags = useTags();
   newTagCounter--;
