@@ -17,20 +17,12 @@
       "id": 69
     },
     {
-      "date": "2020-08-13",
-      "topics": "douobblee?",
-      "entry": "REPLICATE DAT BUG",
-      "moodId": 3,
-      "instructorId": 3,
-      "id": 70
-    },
-    {
+      "id": 72,
       "date": "2020-08-23",
       "topics": "just",
       "entry": "some carp aka 1 old tag",
       "moodId": 1,
-      "instructorId": 2,
-      "id": 72
+      "instructorId": 3
     },
     {
       "date": "2020-08-23",
@@ -49,12 +41,12 @@
       "id": 80
     },
     {
+      "id": 81,
       "date": "2020-08-19",
       "topics": "one",
       "entry": "new thing",
       "moodId": 3,
-      "instructorId": 2,
-      "id": 81
+      "instructorId": 3
     },
     {
       "date": "2020-08-20",
@@ -447,11 +439,6 @@
       "id": 35
     },
     {
-      "entryId": 70,
-      "tagId": 95,
-      "id": 36
-    },
-    {
       "entryId": 72,
       "tagId": 94,
       "id": 41
@@ -500,6 +487,11 @@
       "entryId": 86,
       "tagId": 144,
       "id": 106
+    },
+    {
+      "entryId": 72,
+      "tagId": 94,
+      "id": 107
     }
   ]
 }

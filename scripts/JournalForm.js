@@ -82,7 +82,25 @@ const createEntriesTags = () => {
     newEntriesTags.forEach((entriesTagsObj) => {
       saveEntriesTags(entriesTagsObj);
     });
-  } // else  for editId being a thing starts here;
+  } else {
+    alert(`an edithing thing happened for ${editId}`);
+    matchingTagObjects = arrayOfCurrentEntrySubjects.map((currentSubject) => {
+      return tags.find((tagObj) => {
+        return currentSubject === tagObj.subject;
+      });
+    });
+
+    const newEntriesTags = matchingTagObjects.map((matchingTag) => {
+      return {
+        entryId: editId,
+        tagId: matchingTag.id,
+      };
+    });
+    newEntriesTags.forEach((entriesTagsObj) => {
+      saveEntriesTags(entriesTagsObj);
+    });
+    //there IS an edit ID
+  }
 };
 
 /* 
@@ -92,6 +110,7 @@ return {
     };
 */
 // end conditional check to distinguish bw new and updating entries
+
 eventHub.addEventListener("tagStateChanged", () => {
   tags = useTags();
   newTagCounter--;
