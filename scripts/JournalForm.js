@@ -23,6 +23,7 @@ let tags = [];
 let subjects = [];
 let arrayOfCurrentEntrySubjects = [];
 let matchingTagObjects = [];
+let newTagCounter;
 
 export const JournalForm = () => {
   getInstructors()
@@ -68,7 +69,6 @@ const createEntriesTags = () => {
       return currentSubject === tagObj.subject;
     });
   });
-  debugger;
   const newEntriesTags = matchingTagObjects.map((matchingTag) => {
     return {
       entryId: entries[entries.length - 1].id,
@@ -82,8 +82,11 @@ const createEntriesTags = () => {
 
 eventHub.addEventListener("tagStateChanged", () => {
   tags = useTags();
-  createEntriesTags();
+  debugger;
+  newTagCounter--;
+  debugger;
   setSubjects();
+  createEntriesTags();
 });
 
 eventHub.addEventListener("journalStateChanged", () => {
@@ -98,6 +101,7 @@ eventHub.addEventListener("journalStateChanged", () => {
   );
   //if new tags are needed, save them - then jump into "tagStateEvent" callback to finish process of making new entriesTags
   if (newSubjectsArray.length > 0) {
+    newTagCounter = newSubjectsArray.length;
     const newTagObjects = newSubjectsArray.map((newSubject) => {
       return {
         subject: newSubject,
