@@ -52,6 +52,12 @@ eventHub.addEventListener("click", (clickEvent) => {
   }
 });
 
+eventHub.addEventListener("entryDeleted", () => {
+  entries = useJournalEntries();
+  debugger;
+  render();
+});
+
 const render = () => {
   const entryHTML = entries
     .map((entryObj) => {

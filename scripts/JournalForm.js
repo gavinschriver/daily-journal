@@ -51,6 +51,7 @@ const resetFields = () => {
   document.querySelector("#moodSelect").value = "";
   document.querySelector("#entryId").value = "";
   document.querySelector("#instructorSelect").value = "";
+  document.querySelector("#tagInput").value = "";
 };
 
 // reload array of 'subjects' strings extracted from API state tags
