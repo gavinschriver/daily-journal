@@ -80,12 +80,11 @@ const createEntriesTags = () => {
     newEntriesTags.forEach((entriesTagsObj) => {
       saveEntriesTags(entriesTagsObj);
     });
-  } // for an EDITED entry
+  } // for an EDITED entry (editId has a value)
   else {
     const matchingEntriesTags = entriesTags.filter((ETObj) => {
       return ETObj.entryId === editId;
     });
-    debugger;
     const allTagsInstancesForEditedEntry = matchingEntriesTags.map(
       (matchingETObj) => {
         return tags.find((tagObj) => {
@@ -93,13 +92,23 @@ const createEntriesTags = () => {
         });
       }
     );
-    console.log(allTagsInstancesForEditedEntry);
-    matchingTagObjects = arrayOfCurrentEntrySubjects.map((currentSubject) => {
+
+    const allSubjectInstances = allTagsInstancesForEditedEntry.map((tagObj) => {
+      return tagObj.subject;
+    });
+
+    const subjectsToUse = arrayOfCurrentEntrySubjects.filter(
+      (currentEntrySubject) => {
+        return !allSubjectInstances.includes(currentEntrySubject);
+      }
+    );
+
+    matchingTagObjects = subjectsToUse.map((currentSubject) => {
       return tags.find((tagObj) => {
         return currentSubject === tagObj.subject;
       });
     });
-
+    debugger;
     const newEntriesTags = matchingTagObjects.map((matchingTag) => {
       return {
         entryId: editId,
