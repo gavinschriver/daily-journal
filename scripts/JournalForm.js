@@ -108,7 +108,6 @@ const createEntriesTags = () => {
         return currentSubject === tagObj.subject;
       });
     });
-    debugger;
     const newEntriesTags = matchingTagObjects.map((matchingTag) => {
       return {
         entryId: editId,
@@ -121,14 +120,6 @@ const createEntriesTags = () => {
     //there IS an edit ID
   }
 };
-
-/* 
-return {
-      entryId: editId,
-      tagId: matchingTag.id,
-    };
-*/
-// end conditional check to distinguish bw new and updating entries
 
 eventHub.addEventListener("tagStateChanged", () => {
   tags = useTags();
