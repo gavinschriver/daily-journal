@@ -62,11 +62,9 @@ const setSubjects = () => {
   });
 };
 
-// create array of matching tag objects for all the individual 'subjects' in the current input field
-// then create new entriesTags objects by pairing each of those with the id of most recent entry
-// **ONLY WORKS for new entries right now**
 const createEntriesTags = () => {
   if (editId === "") {
+    // for a NEW entry
     matchingTagObjects = arrayOfCurrentEntrySubjects.map((currentSubject) => {
       return tags.find((tagObj) => {
         return currentSubject === tagObj.subject;
@@ -82,7 +80,20 @@ const createEntriesTags = () => {
     newEntriesTags.forEach((entriesTagsObj) => {
       saveEntriesTags(entriesTagsObj);
     });
-  } else {
+  } // for an EDITED entry
+  else {
+    const matchingEntriesTags = entriesTags.filter((ETObj) => {
+      return ETObj.entryId === editId;
+    });
+    debugger;
+    const allTagsInstancesForEditedEntry = matchingEntriesTags.map(
+      (matchingETObj) => {
+        return tags.find((tagObj) => {
+          return tagObj.id === matchingETObj.tagId;
+        });
+      }
+    );
+    console.log(allTagsInstancesForEditedEntry);
     matchingTagObjects = arrayOfCurrentEntrySubjects.map((currentSubject) => {
       return tags.find((tagObj) => {
         return currentSubject === tagObj.subject;
@@ -252,8 +263,6 @@ eventHub.addEventListener("editButtonClicked", (editButtonEvent) => {
   document.querySelector("#moodSelect").value = matchingEntryObj.moodId;
   document.querySelector("#entryId").value = matchingEntryObj.id;
   document.querySelector("#tagInput").value = stringOfMatchingSubjects;
-  console.log(stringOfMatchingSubjects);
-  console.log(editId);
 });
 
 const render = (instructorArray, moodsArray) => {
