@@ -11,7 +11,7 @@ export const useTags = () => {
 };
 
 export const getTags = () => {
-  return fetch("http://localhost:3001/tags")
+  return fetch("http://localhost:8088/tags")
     .then((response) => response.json())
     .then((parsedTags) => {
       tags = parsedTags;
@@ -20,7 +20,7 @@ export const getTags = () => {
 };
 
 export const saveTag = (newTag) => {
-  return fetch("http://localhost:3001/tags", {
+  return fetch("http://localhost:8088/tags", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

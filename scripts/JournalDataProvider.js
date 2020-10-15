@@ -7,7 +7,7 @@ export const useJournalEntries = () => {
 };
 
 export const getJournalEntries = () => {
-  return fetch("http://localhost:3001/entries?_expand=mood&_expand=instructor")
+  return fetch("http://localhost:8088/entries")
     .then((response) => response.json())
     .then((parsedEntries) => {
       journalEntries = parsedEntries;
@@ -16,7 +16,7 @@ export const getJournalEntries = () => {
 };
 
 export const saveEntry = (entryObj) => {
-  return fetch("http://localhost:3001/entries", {
+  return fetch("http://localhost:8088/entries", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -34,7 +34,7 @@ export const saveEntry = (entryObj) => {
 //Does there need to be/should there be separate flow for if you SAVE versus
 //UPDATE versus DELETE?
 export const updateEntry = (updatedEntryObj) => {
-  return fetch(`http://localhost:3001/entries/${updatedEntryObj.id}`, {
+  return fetch(`http://localhost:8088/entries/${updatedEntryObj.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -53,7 +53,7 @@ eventHub.addEventListener("deleteButtonClicked", (deleteButtonEvent) => {
 });
 
 const deleteEntry = (deleteEntryId) => {
-  return fetch(`http://localhost:3001/entries/${deleteEntryId}`, {
+  return fetch(`http://localhost:8088/entries/${deleteEntryId}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
