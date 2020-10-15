@@ -1,53 +1,496 @@
 {
   "entries": [
     {
+      "id": 90,
+      "date": "2020-08-20",
+      "topics": "more new!",
+      "entry": "another new one ",
+      "moodId": 1,
+      "instructorId": 1
+    },
+    {
+      "id": 91,
+      "date": "2020-10-15",
+      "topics": "whatt",
+      "entry": "how long ago did i last gaze upoon this sweet nonsense",
+      "moodId": 4,
+      "instructorId": 2
+    }
+  ],
+  "moods": [
+    {
       "id": 1,
-      "date": "07/13/2020",
-      "topics": "Group project",
-      "entry": "Kept practicing github collaboration as we finsihed our `Hello World` Group poject",
-      "mood": "excited"
+      "label": "overwhelmed"
     },
     {
       "id": 2,
-      "date": "07/14/2020",
-      "topics": "modular js components",
-      "entry": "Hit with a ton of bricks about modular component creation",
-      "mood": "overwhelmed"
+      "label": "grokking"
     },
     {
       "id": 3,
-      "date": "07/14/2020",
-      "topics": "lab time; debugging; pro dev",
-      "entry": "Worked on Martin's Aquarium modules, Daily Journal layout",
-      "mood": "grokking"
+      "label": "confused"
     },
     {
-      "date": "",
-      "topics": "fffff",
-      "entry": "yeaahh",
-      "mood": "overwhelmed",
-      "id": 4
+      "id": 4,
+      "label": "excited"
+    }
+  ],
+  "instructors": [
+    {
+      "id": 1,
+      "first_name": "Steve",
+      "last_name": "Brownsauce",
+      "expertise": "Querying your mom"
     },
     {
-      "date": "2020-07-03",
-      "topics": "asdfsdf",
-      "entry": "OKAyy",
-      "mood": "overwhelmed",
-      "id": 5
+      "id": 2,
+      "first_name": "Kristin",
+      "last_name": "McDownToBusiness",
+      "expertise": "Tellin' it like it is"
     },
     {
-      "date": "2020-07-08",
-      "topics": "asdfsdf",
-      "entry": "asdfasdf",
-      "mood": "Mood 3",
-      "id": 6
+      "id": 3,
+      "first_name": "Jamestown",
+      "last_name": "Hardlyknewya",
+      "expertise": "peacin' the EFF OUT"
+    }
+  ],
+  "tags": [
+    {
+      "subject": "should",
+      "id": 14
     },
     {
-      "date": "2020-07-25",
-      "topics": "huh",
-      "entry": "be pretty interesting if this wored",
-      "mood": "grokking",
-      "id": 7
+      "subject": "camarches",
+      "id": 68
+    },
+    {
+      "subject": "tresbien",
+      "id": 69
+    },
+    {
+      "subject": "camaros",
+      "id": 70
+    },
+    {
+      "subject": "wet",
+      "id": 71
+    },
+    {
+      "subject": "wetsauce",
+      "id": 72
+    },
+    {
+      "subject": "sammy",
+      "id": 73
+    },
+    {
+      "subject": "nasty",
+      "id": 74
+    },
+    {
+      "subject": "brownsauce",
+      "id": 75
+    },
+    {
+      "subject": "wetness",
+      "id": 76
+    },
+    {
+      "subject": "lets",
+      "id": 77
+    },
+    {
+      "subject": "try",
+      "id": 78
+    },
+    {
+      "subject": "somealott",
+      "id": 79
+    },
+    {
+      "subject": "moretoend",
+      "id": 80
+    },
+    {
+      "subject": "truth",
+      "id": 81
+    },
+    {
+      "subject": "newtaggy",
+      "id": 82
+    },
+    {
+      "subject": "sometag",
+      "id": 83
+    },
+    {
+      "subject": "breck",
+      "id": 84
+    },
+    {
+      "subject": "snagg",
+      "id": 85
+    },
+    {
+      "subject": "and stuff",
+      "id": 86
+    },
+    {
+      "subject": "hooorah",
+      "id": 87
+    },
+    {
+      "subject": "thats",
+      "id": 88
+    },
+    {
+      "subject": "cool",
+      "id": 89
+    },
+    {
+      "subject": "but",
+      "id": 90
+    },
+    {
+      "subject": "fortune",
+      "id": 91
+    },
+    {
+      "subject": "favors",
+      "id": 92
+    },
+    {
+      "subject": "the",
+      "id": 93
+    },
+    {
+      "subject": "carp",
+      "id": 94
+    },
+    {
+      "subject": "NEWHOTNESS",
+      "id": 95
+    },
+    {
+      "subject": "brandspank",
+      "id": 96
+    },
+    {
+      "subject": "ennew",
+      "id": 97
+    },
+    {
+      "subject": "fleshrod",
+      "id": 98
+    },
+    {
+      "subject": "cambby",
+      "id": 99
+    },
+    {
+      "subject": "grandsman",
+      "id": 100
+    },
+    {
+      "subject": "splendorous",
+      "id": 101
+    },
+    {
+      "subject": "gramma",
+      "id": 102
+    },
+    {
+      "subject": "gremuh",
+      "id": 103
+    },
+    {
+      "subject": "grench",
+      "id": 104
+    },
+    {
+      "subject": "grend",
+      "id": 105
+    },
+    {
+      "subject": "gruff",
+      "id": 106
+    },
+    {
+      "subject": "twentyy",
+      "id": 107
+    },
+    {
+      "subject": "span",
+      "id": 108
+    },
+    {
+      "subject": "wan",
+      "id": 109
+    },
+    {
+      "subject": "plan",
+      "id": 110
+    },
+    {
+      "subject": "fan",
+      "id": 111
+    },
+    {
+      "subject": "agamm",
+      "id": 112
+    },
+    {
+      "subject": "manny",
+      "id": 113
+    },
+    {
+      "subject": "neww",
+      "id": 114
+    },
+    {
+      "subject": "thingggs",
+      "id": 115
+    },
+    {
+      "subject": "something",
+      "id": 116
+    },
+    {
+      "subject": "abby",
+      "id": 117
+    },
+    {
+      "subject": "zoe",
+      "id": 118
+    },
+    {
+      "subject": "zoey",
+      "id": 119
+    },
+    {
+      "subject": "abbery",
+      "id": 120
+    },
+    {
+      "subject": "taggies",
+      "id": 121
+    },
+    {
+      "subject": "fishin",
+      "id": 122
+    },
+    {
+      "subject": "swimmin",
+      "id": 123
+    },
+    {
+      "subject": "again",
+      "id": 124
+    },
+    {
+      "subject": "moregain",
+      "id": 125
+    },
+    {
+      "subject": "dubbah",
+      "id": 126
+    },
+    {
+      "subject": "trubbah",
+      "id": 127
+    },
+    {
+      "subject": "whyonly",
+      "id": 128
+    },
+    {
+      "subject": "thosegus",
+      "id": 129
+    },
+    {
+      "subject": "bleh",
+      "id": 130
+    },
+    {
+      "subject": "blargh",
+      "id": 131
+    },
+    {
+      "subject": "dunnoo",
+      "id": 132
+    },
+    {
+      "subject": "buttt",
+      "id": 133
+    },
+    {
+      "subject": "idoknow",
+      "id": 134
+    },
+    {
+      "subject": "noooo",
+      "id": 135
+    },
+    {
+      "subject": "pleaseestop",
+      "id": 136
+    },
+    {
+      "subject": "debugging",
+      "id": 137
+    },
+    {
+      "subject": "andtugging",
+      "id": 138
+    },
+    {
+      "subject": "toight",
+      "id": 139
+    },
+    {
+      "subject": "",
+      "id": 140
+    },
+    {
+      "subject": "ahhh",
+      "id": 141
+    },
+    {
+      "subject": "stillworks?",
+      "id": 142
+    },
+    {
+      "subject": "FARKK",
+      "id": 143
+    },
+    {
+      "subject": "mark",
+      "id": 144
+    },
+    {
+      "subject": "yoooo",
+      "id": 145
+    },
+    {
+      "subject": "grabb",
+      "id": 146
+    },
+    {
+      "subject": "uhohhh",
+      "id": 147
+    },
+    {
+      "subject": "grrrr",
+      "id": 148
+    },
+    {
+      "subject": "isweartogod",
+      "id": 149
+    },
+    {
+      "subject": "thisfuckingthing",
+      "id": 150
+    },
+    {
+      "subject": "why",
+      "id": 151
+    },
+    {
+      "subject": "arent",
+      "id": 152
+    },
+    {
+      "subject": "thou",
+      "id": 153
+    },
+    {
+      "subject": "athing",
+      "id": 154
+    },
+    {
+      "subject": "another",
+      "id": 155
+    },
+    {
+      "subject": "newnessss",
+      "id": 156
+    },
+    {
+      "subject": "change",
+      "id": 157
+    },
+    {
+      "subject": "axis",
+      "id": 158
+    },
+    {
+      "subject": "penumbra",
+      "id": 159
+    },
+    {
+      "subject": "narcos",
+      "id": 160
+    },
+    {
+      "subject": "gehhfaa",
+      "id": 161
+    },
+    {
+      "subject": "gran",
+      "id": 162
+    },
+    {
+      "subject": "nahh",
+      "id": 163
+    },
+    {
+      "subject": "uhohh",
+      "id": 164
+    },
+    {
+      "subject": "mooo",
+      "id": 165
+    },
+    {
+      "subject": "killin it",
+      "id": 166
+    },
+    {
+      "subject": "still chillin it",
+      "id": 167
+    }
+  ],
+  "entriesTags": [
+    {
+      "entryId": 90,
+      "tagId": 94,
+      "id": 181
+    },
+    {
+      "entryId": 90,
+      "tagId": 157,
+      "id": 182
+    },
+    {
+      "entryId": 90,
+      "tagId": 158,
+      "id": 183
+    },
+    {
+      "entryId": 90,
+      "tagId": 165,
+      "id": 184
+    },
+    {
+      "entryId": 91,
+      "tagId": 166,
+      "id": 185
+    },
+    {
+      "entryId": 91,
+      "tagId": 167,
+      "id": 186
     }
   ]
 }
